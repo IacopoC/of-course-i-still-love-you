@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -15,7 +15,9 @@ class MessageController extends Controller
      */
     public function index(): View
     {
-        return view('messages.index');
+        return view('messages.index', [
+            'messages' => Message::with('user')->latest()->get(),
+        ]);
     }
 
     /**
@@ -34,9 +36,15 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $request->user()->messages()->create($validated);
+
+        return redirect(route('messages.index'));
     }
 
     /**
