@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource of specific author.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,6 +22,11 @@ class MessageController extends Controller
         ]);
     }
 
+    /**
+     * Display a listing of the resource in homepage.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show(): View
     {
         return view('homepage', [
