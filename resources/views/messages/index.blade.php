@@ -15,20 +15,20 @@
                     <button type="submit" class="btn btn-dark mt-2">{{ __('Create') }}</button>
                 </form>
             </div>
-            @if(isset($messages))
+            @isset($messages)
             @foreach ($messages as $message)
-                <div>
-                    <div>
-                        <div>
-                            <div class="pt-3">
-                                <p>{{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }}</p>
-                            </div>
+                <div class="pt-4">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }}
                         </div>
-                        <p><strong>{{ $message->message }}</strong></p>
+                        <div class="card-body">
+                            <p class="card-text">{{ $message->message }}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach
-                @endif
+                @endisset
         </div>
     </div>
 @endsection

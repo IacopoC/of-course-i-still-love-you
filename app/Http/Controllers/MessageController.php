@@ -5,6 +5,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -15,7 +16,15 @@ class MessageController extends Controller
      */
     public function index(): View
     {
+        $userId = Auth::user()->id;
         return view('messages.index', [
+            'messages' => Message::where('user_id',$userId)->latest()->get(),
+        ]);
+    }
+
+    public function show(): View
+    {
+        return view('homepage', [
             'messages' => Message::with('user')->latest()->get(),
         ]);
     }
@@ -45,17 +54,6 @@ class MessageController extends Controller
         $request->user()->messages()->create($validated);
 
         return redirect(route('messages.index'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Message $message)
-    {
-        //
     }
 
     /**
