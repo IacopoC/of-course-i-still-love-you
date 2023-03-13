@@ -25,6 +25,14 @@
                         <div class="card-body">
                             <p class="card-text">{{ $message->message }}</p>
                         </div>
+                        @unless ($message->created_at->eq($message->updated_at))
+                            <p>{{ __('edited') }}</p>
+                        @endunless
+                        @if ($message->user->is(auth()->user()))
+                            <div class="card-body">
+                            <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-dark mt-2">Edit</button></a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             @endforeach

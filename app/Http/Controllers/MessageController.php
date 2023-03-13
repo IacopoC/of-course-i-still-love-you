@@ -55,9 +55,7 @@ class MessageController extends Controller
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
-
         $request->user()->messages()->create($validated);
-
         return redirect(route('messages.index'));
     }
 
@@ -67,9 +65,12 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
+    public function edit(Message $message): View
     {
-        //
+        $this->authorize('update', $message);
+        return view('messages.edit', [
+            'message' => $message,
+        ]);
     }
 
     /**
@@ -79,9 +80,16 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Request $request, Message $message): RedirectResponse
     {
-        //
+
+        $this->authorize('update', $message);
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+        $message->update($validated);
+
+        return redirect(route('messages.index'));
     }
 
     /**
