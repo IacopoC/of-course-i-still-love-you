@@ -13,7 +13,7 @@
                     @csrf
                     @method('patch')
                     <textarea name="message" class="form-control" id="textareaMessage">{{ old('message', $message->message) }}</textarea>
-                    <button type="submit" class="btn btn-dark mt-2">{{ __('Create') }}</button>
+                    <button type="submit" class="btn btn-dark mt-2">Edit</button>
                     <a href="{{ route('messages.index') }}"><p>Cancel</p></a>
                 </form>
             </div>

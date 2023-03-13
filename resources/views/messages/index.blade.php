@@ -26,7 +26,7 @@
                             <p class="card-text">{{ $message->message }}</p>
                         </div>
                         @unless ($message->created_at->eq($message->updated_at))
-                            <p>{{ __('edited') }}</p>
+                            <p class="ps-3">edited</p>
                         @endunless
                         @if ($message->user->is(auth()->user()))
                             <div class="card-body">
