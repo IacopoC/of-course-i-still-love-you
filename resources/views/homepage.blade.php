@@ -10,19 +10,16 @@
         @isset($messages)
             @foreach ($messages as $message)
                 <div class="pt-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-header">
-                            {{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }}
+                            <span class="text-white">{{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }} </span>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">{{ $message->message }}</p>
+                            <p class="card-text text-white">{{ $message->message }}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         @endisset
-         <div class="mt-4">
-            <p>Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</p>
-         </div>
     </div>
 @endsection

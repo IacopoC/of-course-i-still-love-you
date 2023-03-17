@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Of Course I Still Love You
@@ -75,9 +75,14 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 bg-dark">
             @yield('content')
         </main>
+        <footer class="footer bg-dark">
+            <div class="container pt-4 pb-4">
+                <span class="text-white">Of Course I Still Love you - Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</span>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
