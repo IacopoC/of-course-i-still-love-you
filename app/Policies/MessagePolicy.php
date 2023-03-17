@@ -65,7 +65,7 @@ class MessagePolicy
      */
     public function delete(User $user, Message $message)
     {
-        //
+        return $this->update($user, $message);
     }
 
     /**

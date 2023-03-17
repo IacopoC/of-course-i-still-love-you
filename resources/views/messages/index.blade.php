@@ -32,6 +32,11 @@
                             <div class="card-body">
                             <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-dark mt-2">Edit</button></a>
                             </div>
+                            <form method="POST" action="{{ route('messages.destroy', $message) }}">
+                                @csrf
+                                @method('delete')
+                                <a href="{{ route('messages.destroy', $message) }}"><button type="submit" class="btn btn-dark mt-2 ms-3 mb-3">Delete</button></a>
+                            </form>
                         @endif
                     </div>
                 </div>

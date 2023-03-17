@@ -98,8 +98,11 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Message $message): RedirectResponse
     {
-        //
+        $this->authorize('delete', $message);
+        $message->delete();
+
+        return redirect(route('messages.index'));
     }
 }
