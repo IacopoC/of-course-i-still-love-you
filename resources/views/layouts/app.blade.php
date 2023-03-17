@@ -50,6 +50,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('messages.index') }}">{{ __('Messages') }}</a>
                             </li>
                             <li class="nav-item dropdown">
