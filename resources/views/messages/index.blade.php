@@ -24,20 +24,22 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text text-white">{{ $message->message }}</p>
-                        </div>
                         @unless ($message->created_at->eq($message->updated_at))
-                            <p class="ps-3 text-white">edited</p>
+                            <p class="text-white">- edited</p>
                         @endunless
                         @if ($message->user->is(auth()->user()))
-                            <div class="card-body">
-                            <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-light mt-2">Edit</button></a>
+                            <div class="d-inline">
+                            <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-light">Edit</button></a>
                             </div>
-                            <form method="POST" action="{{ route('messages.destroy', $message) }}">
+                                <form method="POST" class="d-inline" action="{{ route('messages.destroy', $message) }}">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('messages.destroy', $message) }}"><button type="submit" class="btn btn-light mt-2 ms-3 mb-3">Delete</button></a>
-                            </form>
+                                <a href="{{ route('messages.destroy', $message) }}">
+                                    <button type="submit" class="btn btn-light ms-3">Delete</button>
+                                </a>
+                                </form>
                         @endif
+                        </div>
                     </div>
                 </div>
             @endforeach
