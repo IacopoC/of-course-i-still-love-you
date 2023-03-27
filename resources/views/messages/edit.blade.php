@@ -12,7 +12,7 @@
                     <label for="textareaMessage" class="form-label">Message</label>
                     @csrf
                     @method('patch')
-                    <textarea name="message" class="form-control" id="textareaMessage">{{ old('message', $message->message) }}</textarea>
+                    <textarea name="message" class="form-control" id="textareaMessage" rows="3" maxlength="255">{{ old('message', $message->message) }}</textarea>
                     <div class="d-inline">
                     <button type="submit" class="btn btn-light mt-2">Edit</button>
                     </div>
