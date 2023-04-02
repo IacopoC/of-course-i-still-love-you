@@ -30,7 +30,7 @@ class MessageController extends Controller
     public function show(): View
     {
         return view('homepage', [
-            'messages' => Message::with('user')->latest()->get(),
+            'messages' => Message::with('user')->latest()->take(3)->get(),
         ]);
     }
 

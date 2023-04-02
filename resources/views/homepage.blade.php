@@ -6,9 +6,18 @@
 
 @section('content')
     <div class="container">
-        <h1>Homepage</h1>
+        <div class="p-5 mb-4 bg-dark rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold text-white">Welcome to Of Course I Still Love you</h1>
+                <p class="col-md-8 fs-4 text-white">A messages web application to write love text to the world, register now or login and start writing your messages.</p>
+                <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
+                <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
+            </div>
+        </div>
+        <div class="row">
         @isset($messages)
             @foreach ($messages as $message)
+                <div class="col-md-4">
                 <div class="pt-4">
                     <div class="card bg-dark">
                         <div class="card-header">
@@ -19,7 +28,9 @@
                         </div>
                     </div>
                 </div>
+                </div>
             @endforeach
         @endisset
+        </div>
     </div>
 @endsection
