@@ -6,6 +6,7 @@
 
 @section('content')
 <div class="container">
+    <div class="height-80"></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-dark">
@@ -77,5 +78,6 @@
             </div>
         </div>
     </div>
+    <div class="height-140"></div>
 </div>
 @endsection

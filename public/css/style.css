@@ -1,3 +1,11 @@
 .card-header {
     background-color: #5A5A5A;
 }
+
+.height-80 {
+    height: 80px;
+}
+
+.height-140 {
+    height: 140px;
+}
