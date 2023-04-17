@@ -8,12 +8,7 @@
     <div class="container">
         <div class="mt-4">
             <div>
-                <form method="POST" action="{{ route('messages.store') }}">
-                    <label for="textareaMessage" class="form-label">Message</label>
-                    @csrf
-                    <textarea name="message" placeholder="{{ __('What\'s on your mind?') }}" class="form-control" id="textareaMessage" rows="3" maxlength="255">{{ old('message') }}</textarea>
-                    <button type="submit" class="btn btn-light mt-2">{{ __('Create') }}</button>
-                </form>
+                <x-forms.tinymce-editor/>
             </div>
             @isset($messages)
             @foreach ($messages as $message)
