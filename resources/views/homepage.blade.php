@@ -24,7 +24,7 @@
                             <span class="text-white">{{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }} </span>
                         </div>
                         <div class="card-body">
-                            <p class="card-text text-white">{{ $message->message }}</p>
+                            {!! $message->message !!}
                         </div>
                     </div>
                 </div>
