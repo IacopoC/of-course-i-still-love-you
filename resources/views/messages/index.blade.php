@@ -10,7 +10,11 @@
             <div>
                 <x-forms.tinymce-editor/>
             </div>
-            @isset($messages)
+            @if(count($messages) > 1)
+                <div class="pt-4">
+                <p class="text-white text-uppercase"><strong>your messages:</strong></p>
+                </div>
+            @endif
             @foreach ($messages as $message)
                 <div class="pt-4">
                     <div class="card bg-dark">
@@ -38,7 +42,6 @@
                     </div>
                 </div>
             @endforeach
-                @endisset
         </div>
     </div>
 @endsection
