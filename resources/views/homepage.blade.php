@@ -16,6 +16,9 @@
         </div>
         <div class="row">
         @isset($messages)
+                <div class="pt-4">
+                    <p class="text-white text-uppercase"><strong>last messages:</strong></p>
+                </div>
             @foreach ($messages as $message)
                 <div class="col-md-4">
                 <div class="pt-4">

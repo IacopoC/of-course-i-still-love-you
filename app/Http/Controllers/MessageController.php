@@ -39,9 +39,11 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function messages(): View
     {
-        //
+        return view('messages-list', [
+            'messages' => Message::with('user')->get(),
+        ]);
     }
 
     /**
