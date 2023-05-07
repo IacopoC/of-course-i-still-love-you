@@ -33,6 +33,9 @@
                 </div>
                 </div>
             @endforeach
+                <div class="text-end">
+                    <p class="text-white text-uppercase"><a href="/messages-list"><strong>see all messages</strong></a></p>
+                </div>
         @endisset
         </div>
     </div>
