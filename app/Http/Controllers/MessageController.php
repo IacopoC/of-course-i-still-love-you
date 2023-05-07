@@ -35,7 +35,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display messages in a list
      *
      * @return \Illuminate\Http\Response
      */
