@@ -7,6 +7,7 @@
 @section('content')
     <div class="container">
         <div class="mt-4">
+            <div class="height-140"></div>
             <div>
                 <form method="post" action="{{ route('messages.update', $message) }}">
                     @csrf
@@ -18,6 +19,7 @@
                     </div>
                 </form>
             </div>
+            <div class="height-140"></div>
         </div>
     </div>
 @endsection
