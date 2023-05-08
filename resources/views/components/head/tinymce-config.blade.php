@@ -2,7 +2,7 @@
 <script>
     tinymce.init({
         selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
-        plugins: 'code table lists',
-        toolbar: 'undo redo | formatselect| bold italic |'
+        plugins: 'emoticons',
+        toolbar: 'undo redo | formatselect| bold italic | emoticons'
     });
 </script>
