@@ -25,6 +25,9 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="d-flex">
+                  {!! $messages->links() !!}
+                </div>
             @endisset
         </div>
     </div>

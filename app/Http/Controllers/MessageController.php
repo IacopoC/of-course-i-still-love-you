@@ -42,7 +42,7 @@ class MessageController extends Controller
     public function messages(): View
     {
         return view('messages-list', [
-            'messages' => Message::with('user')->latest()->get(),
+            'messages' => Message::with('user')->latest()->paginate(10),
         ]);
     }
 
