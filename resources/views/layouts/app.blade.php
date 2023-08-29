@@ -88,7 +88,27 @@
         </main>
         <footer class="footer bg-dark">
             <div class="container pt-4 pb-4">
+                <div class="row">
+                    <div class="col-md-8">
                 <span class="text-white">Of Course I Still Love you - Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                <a class="text-white text-decoration-none ps-2" href="/messages-list">{{ __('Messages List') }}</a>
+                @guest
+                    @if (Route::has('login'))
+                            <a class="text-white text-decoration-none ps-2" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @endif
+                    @if (Route::has('register'))
+                            <a class="text-white text-decoration-none ps-2" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+                 @else
+                             <a class="text-white text-decoration-none ps-2" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
+                             <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Messages') }}</a>
+                  @endguest
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
