@@ -113,5 +113,8 @@
             </div>
         </footer>
     </div>
+    <script>
+        window.google_api_key = "{{ env('GOOGLE_LOCATION_KEY') }}";
+    </script>
 </body>
 </html>
