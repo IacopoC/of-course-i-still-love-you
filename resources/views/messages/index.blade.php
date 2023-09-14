@@ -40,7 +40,6 @@
                         @endif
                         </div>
                     </div>
-                    <p class="text-white location-data ps-3"></p>
                 </div>
             @endforeach
         </div>
