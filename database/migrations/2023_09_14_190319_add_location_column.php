@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('messages', function (Blueprint $table) {
+        Schema::table('messages', function (Blueprint $table)
+        {
             $table->string('location')->nullable();
         });
     }
