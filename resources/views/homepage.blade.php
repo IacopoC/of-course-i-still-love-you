@@ -45,6 +45,8 @@
                         </div>
                         <div class="card-body">
                             {!! $message->message !!}
+                            <hr>
+                            <p class="text-white">Where you are: {{ $message->location }}</p>
                         </div>
                     </div>
                 </div>
