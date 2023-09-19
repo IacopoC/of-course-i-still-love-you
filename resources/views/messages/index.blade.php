@@ -26,6 +26,8 @@
                         @unless ($message->created_at->eq($message->updated_at))
                             <p class="text-white">- edited</p>
                         @endunless
+                            <hr>
+                            <p class="text-white">Where you are: {{ $message->location }}</p>
                         @if ($message->user->is(auth()->user()))
                             <div class="d-inline">
                             <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-light">Edit</button></a>

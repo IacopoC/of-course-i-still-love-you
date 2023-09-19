@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded',function() {
                 .then(location_data => {
 
                     let {compound_code} = location_data.plus_code;
-                    let compound_short = compound_code.slice(7);
+                    let compound_short = compound_code.slice(8);
 
                     locationData.innerHTML = compound_short;
+                    document.getElementById('location').value = compound_short
+
 
                 })
 
