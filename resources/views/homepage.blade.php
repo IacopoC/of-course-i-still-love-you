@@ -28,6 +28,9 @@
                     <div class="outer-orbit-cirlces"></div>
                 </div>
             </div>
+                <div class="image">
+                    <img src="{{ asset("img/achab.png") }}" class="img-fluid visually-hidden">
+                </div>
             </div>
             </div>
         </div>
