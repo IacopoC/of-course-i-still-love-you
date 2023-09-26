@@ -2,7 +2,6 @@
 /public/build
 /public/hot
 /public/storage
-/public/img/achab.pngZone.Identifier
 /storage/*.key
 /vendor
 .env
