@@ -17,7 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     <script src="{{asset('js/location.js')}}"></script>
-    <script src="{{asset('js/trap.js')}}" defer></script>
     <x-head.tinymce-config/>
 </head>
 <body>
