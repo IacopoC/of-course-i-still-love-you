@@ -12,7 +12,12 @@ class UserController extends Controller
         $validated = $request->validate([
             'trap' => 'boolean',
         ]);
+
         $request->user()->update($validated);
+
+        $trapValue = $request->input('trap');
+        $trapValue->save();
+
         return redirect(route('dashboard'));
     }
 }
