@@ -17,7 +17,7 @@
                 <form method="post">
                     @csrf
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="trapMode1" name="trap">
+                    <input class="form-check-input" type="checkbox" id="trapMode1" name="trap" value="1">
                     <label class="form-check-label text-white" for="trapMode1">It's a Trap mode!</label>
                 </div>
                     <button type="submit" class="btn btn-light mt-2">{{ __('Save') }}</button>
