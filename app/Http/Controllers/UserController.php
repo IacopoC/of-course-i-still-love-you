@@ -18,9 +18,6 @@ class UserController extends Controller
         if($request->filled('trap')) {
             $trapValue = $request->input('trap');
             $trapValue->save();
-        } else {
-            $trapValue = 0;
-            $trapValue->save();
         }
 
         return redirect(route('dashboard'));
