@@ -15,10 +15,10 @@ class UserController extends Controller
 
         $request->user()->update($validated);
 
-        if($request->filled('trap')) {
             $trapValue = $request->input('trap');
             $trapValue->save();
-        }
+            var_dump($trapValue);
+
 
         return redirect(route('dashboard'));
     }
