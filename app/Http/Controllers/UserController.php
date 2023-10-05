@@ -11,13 +11,14 @@ class UserController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        
         $validated = $request->validate([
             'trap' => 'boolean',
         ]);
 
         if($request->has('trap')) {
             $trapValue = $request->input('trap');
-            $trapValue->update($validated);
+            $trapValue->save($validated);
         }
 
         return redirect(route('dashboard'));

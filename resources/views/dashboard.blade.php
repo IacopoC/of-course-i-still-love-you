@@ -14,7 +14,7 @@
             <p class="text-white">Email: {{ Auth::user()->email }}</p>
             <p class="text-white">Profile created at: {{ Auth::user()->created_at }}</p>
                 <p class="text-white">Switch mode:</p>
-                <form method="post">
+                <form method="post" action="{{ route('dashboard') }}">
                     @csrf
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="trapMode1" name="trap">
