@@ -11,13 +11,12 @@ class UserController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        if($request->has('trap')) {
-            $trapValue = true;
-            $trapValue->save();
-        } else {
-            $trapValue = false;
-            $trapValue->save();
-        }
+        $trapValue = (bool)$request->input('trap');
+
+        $user = $request->user();
+        $user->trap = $trapValue;
+
+        $user->save();
 
         return redirect(route('dashboard'));
     }

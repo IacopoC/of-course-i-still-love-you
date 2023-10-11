@@ -43,4 +43,12 @@
         <div class="height-140"></div>
     </div>
 </div>
+<script>
+    const trapMode1Checkbox = document.querySelector('#trapMode1');
+    trapMode1Checkbox.addEventListener('change', () => {
+        localStorage.setItem('trapMode1', trapMode1Checkbox.checked);
+    });
+    const trapMode1Enabled = localStorage.getItem('trapMode1') === 'true';
+    trapMode1Checkbox.checked = trapMode1Enabled;
+</script>
 @endsection
