@@ -25,6 +25,7 @@
             </div>
         </div>
         <div class="col-md-6">
+            @if(Auth::user()->trap == 0)
             <div id="circle-orbit-container">
                 <div id="inner-orbit">
                     <div class="inner-orbit-cirlces"></div>
@@ -36,11 +37,13 @@
                     <div class="outer-orbit-cirlces"></div>
                 </div>
             </div>
+                <div class="height-140"></div>
+            @else
             <div class="image">
-                <img src="{{ asset("img/achab.png") }}" class="img-fluid visually-hidden" id="image-achab">
+                <img src="{{ asset("img/achab.png") }}" class="img-fluid" id="image-achab">
             </div>
+            @endif
         </div>
-        <div class="height-140"></div>
     </div>
 </div>
 <script>
