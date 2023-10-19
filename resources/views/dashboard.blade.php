@@ -40,7 +40,7 @@
             </div>
                 <div class="height-140"></div>
             @else
-            <div class="image">
+            <div class="image" id="trap">
                 <img src="{{ asset("img/achab.png") }}" class="img-fluid" id="image-achab">
             </div>
             @endif

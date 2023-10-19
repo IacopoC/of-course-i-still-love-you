@@ -24,7 +24,15 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Of Course I Still Love You
+                    @if (Auth::check())
+                        @if(Auth::user()->trap == 0)
+                            Of Course I Still Love You
+                        @else
+                            It's a Trap! (Of Course I Still Love You)
+                        @endif
+                        @else
+                        Of Course I Still Love You
+                    @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
