@@ -28,7 +28,7 @@
                         @if(Auth::user()->trap == 0)
                             Of Course I Still Love You
                         @else
-                            It's a Trap! (Of Course I Still Love You)
+                           <img src="{{ asset("/img/achab.png") }}" class="img-fluid logo-trap"> It's a Trap! (Of Course I Still Love You)
                         @endif
                         @else
                         Of Course I Still Love You
