@@ -41,9 +41,9 @@
                 </div>
             </div>
                 @else
-                <div class="image" id="trap">
-                    <img src="{{ asset("img/achab.png") }}" class="img-fluid">
-                </div>
+                    <div class="mt-5">
+                        <iframe src="https://giphy.com/embed/TZFmvyDvr3WaQ" width="100%" height="205" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </div>
                 @endif
                     @else
                     <div id="circle-orbit-container">

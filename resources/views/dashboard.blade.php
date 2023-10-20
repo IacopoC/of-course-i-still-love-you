@@ -25,7 +25,6 @@
             </div>
         </div>
         <div class="col-md-6">
-            @if (Auth::check())
             @if(Auth::user()->trap == 0)
             <div id="circle-orbit-container">
                 <div id="inner-orbit">
@@ -38,25 +37,8 @@
                     <div class="outer-orbit-cirlces"></div>
                 </div>
             </div>
-                <div class="height-140"></div>
             @else
-            <div class="image" id="trap">
-                <img src="{{ asset("img/achab.png") }}" class="img-fluid" id="image-achab">
-            </div>
-            @endif
-            @else
-                <div id="circle-orbit-container">
-                    <div id="inner-orbit">
-                        <div class="inner-orbit-cirlces"></div>
-                    </div>
-                    <div id="middle-orbit">
-                        <div class="middle-orbit-cirlces"></div>
-                    </div>
-                    <div id="outer-orbit">
-                        <div class="outer-orbit-cirlces"></div>
-                    </div>
-                </div>
-                <div class="height-140"></div>
+                    <iframe class="mt-5" src="https://giphy.com/embed/Z1LYiyIPhnG9O" width="100%" height="258" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             @endif
         </div>
     </div>
