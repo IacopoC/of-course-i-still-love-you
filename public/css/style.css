@@ -107,13 +107,3 @@ p, hr {
         transform: rotate(360deg);
     }
 }
-
-#trap {
-    animation: trap 5s infinite;
-}
-
-@keyframes trap {
-    50% {
-        transform: rotate(180deg);
-    }
-}
