@@ -9,7 +9,18 @@
         <div class="row">
             @isset($messages)
                 <div class="pt-4">
-                    <p class="text-white text-uppercase"><strong>all messages:</strong></p>
+                    <div class="row">
+                    <div class="col-md-9">
+                    <p class="text-white text-uppercase pt-md-5"><strong>all messages:</strong></p>
+                    </div>
+                    <div class="col-md-3">
+                        @if (Auth::check() and Auth::user()->trap == 1)
+                        <div class="text-end">
+                            <img class="img-fluid w-50" src="{{ asset('img/tie-fighter.png') }}">
+                        </div>
+                            @endif
+                    </div>
+                    </div>
                 </div>
                 @foreach ($messages as $message)
                     <div class="col-md-12">
@@ -31,6 +42,20 @@
                   {!! $messages->links() !!}
                 </div>
             @endisset
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                @if (Auth::check() and Auth::user()->trap == 1)
+                <p class="text-white text-uppercase pt-md-5 ps-4"><strong>it's a trap!</strong></p>
+                 @endif
+            </div>
+            <div class="col-md-3">
+                @if (Auth::check() and Auth::user()->trap == 1)
+                    <div class="text-end">
+                        <img class="img-fluid w-50" src="{{ asset('img/tie-fighter.png') }}">
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
 @endsection
