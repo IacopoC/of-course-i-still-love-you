@@ -11,8 +11,15 @@
                 <x-forms.tinymce-editor/>
             </div>
             @if(count($messages) > 1)
-                <div class="pt-4">
-                <p class="text-white text-uppercase"><strong>your messages:</strong></p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <p class="text-white text-uppercase pt-md-5"><strong>your messages:</strong></p>
+                    </div>
+                    <div class="col-md-3">
+                        @if (Auth::check() and Auth::user()->trap == 1)
+                            <iframe src="https://giphy.com/embed/3ornjSL2sBcPflIDiU" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                        @endif
+                    </div>
                 </div>
             @endif
             @foreach ($messages as $message)
