@@ -19,7 +19,7 @@
     <script src="{{asset('js/location.js')}}"></script>
     <x-head.tinymce-config/>
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
@@ -95,7 +95,7 @@
         <main class="py-4 bg-dark">
             @yield('content')
         </main>
-        <footer class="footer bg-dark">
+        <footer class="footer bg-dark fixed-bottom">
             <div class="container pt-4 pb-4">
                 <div class="row">
                     <div class="col-md-8">

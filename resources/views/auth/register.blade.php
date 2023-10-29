@@ -78,6 +78,5 @@
             </div>
         </div>
     </div>
-    <div class="height-140"></div>
 </div>
 @endsection
