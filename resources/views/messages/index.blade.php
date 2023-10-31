@@ -15,11 +15,6 @@
                     <div class="col-md-9">
                         <p class="text-white text-uppercase pt-md-5"><strong>your messages:</strong></p>
                     </div>
-                    <div class="col-md-3">
-                        @if (Auth::check() and Auth::user()->trap == 1)
-                            <iframe src="https://giphy.com/embed/3ornjSL2sBcPflIDiU" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                        @endif
-                    </div>
                 </div>
             @endif
             @foreach ($messages as $message)
@@ -52,6 +47,15 @@
                 </div>
             @endforeach
         </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            @if (Auth::check() and Auth::user()->trap == 1)
+                <iframe src="https://giphy.com/embed/jW1ZmcgPXcasw" width="100%" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            @endif
+        </div>
+        <div class="col-md-3"></div>
     </div>
     <div class="height-140"></div>
 @endsection
