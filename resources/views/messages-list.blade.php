@@ -14,11 +14,6 @@
                     <p class="text-white text-uppercase pt-md-5"><strong>all messages:</strong></p>
                     </div>
                     <div class="col-md-3">
-                        @if (Auth::check() and Auth::user()->trap == 1)
-                        <div class="text-end">
-                            <img class="img-fluid w-50" src="{{ asset('img/tie-fighter.png') }}">
-                        </div>
-                            @endif
                     </div>
                     </div>
                 </div>
@@ -51,12 +46,15 @@
             </div>
             <div class="col-md-3">
                 @if (Auth::check() and Auth::user()->trap == 1)
-                    <div class="text-end">
-                        <img class="img-fluid w-50" src="{{ asset('img/tie-fighter.png') }}">
-                    </div>
+                    <iframe src="https://giphy.com/embed/lHF5rbg9TYqDS" width="100%" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                 @endif
             </div>
         </div>
     </div>
+    @if (Auth::check() and Auth::user()->trap == 1)
+        <div class="tie-fighter">
+            <img class="img-fluid tie-image" src="{{ asset('img/tie-fighter.png') }}">
+        </div>
+    @endif
     <div class="height-140"></div>
 @endsection

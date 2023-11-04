@@ -57,5 +57,10 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    @if (Auth::check() and Auth::user()->trap == 1)
+        <div class="millenium-falcon">
+            <img class="img-fluid millenium-image" src="{{ asset('img/millenium-falcon.png') }}">
+        </div>
+    @endif
     <div class="height-140"></div>
 @endsection
