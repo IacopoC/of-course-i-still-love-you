@@ -16,7 +16,7 @@
                         <p class="col-md-8 fs-5 text-white">A messages web application to write texts to the world, register now or login and start writing your messages.</p>
                     @else
                         <h1 class="display-5 fw-bold text-white">It's a Trap!</h1>
-                        <p class="col-md-8 fs-5 text-white">Congratulation, you activated the Trap Version<br> Of Course I Still Love you.</p>
+                        <p class="col-md-8 fs-5 text-white">Congratulation, you activated the Star Wars version<br> Of Course I Still Love you.</p>
                     @endif
                 @else
                     <h1 class="display-5 fw-bold text-white">Of Course I Still Love you</h1>

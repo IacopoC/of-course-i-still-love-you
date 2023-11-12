@@ -141,11 +141,13 @@ p, hr {
 }
 
 .tie-image {
-    animation: movimento-tie 4s linear infinite;
+    animation: movimento-tie 4s linear;
+    animation-fill-mode: forwards;
 }
 
 .millenium-image {
-    animation: movimento-millenium 4s linear infinite;
+    animation: movimento-millenium 4s linear;
+    animation-fill-mode: forwards;
 }
 
 
