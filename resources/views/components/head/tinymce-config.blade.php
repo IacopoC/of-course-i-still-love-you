@@ -2,7 +2,18 @@
 <script>
     tinymce.init({
         selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
-        plugins: 'emoticons',
-        toolbar: 'undo redo | formatselect| bold italic | emoticons'
+        plugins: 'emoticons wordcount',
+        toolbar: 'undo redo | formatselect| bold italic | emoticons',
+        setup: function(editor) {
+            var max = 255;
+            editor.on('submit', function(event) {
+                var numChars = tinymce.activeEditor.plugins.wordcount.body.getCharacterCount();
+                if (numChars > max) {
+                    alert("Maximum " + max + " characters allowed.");
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        }
     });
 </script>
