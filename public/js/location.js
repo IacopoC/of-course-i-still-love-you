@@ -31,10 +31,8 @@ document.addEventListener('DOMContentLoaded',function() {
 
                 })
 
-                .catch(error => console.log("Errore nel mostrare indizzo geolocalizzato"));
+                .catch(error => console.log("Error in address location"));
 
         })
-    } else {
-        alert('Non hai accesso alla geolocalizzazione');
     }
 });
