@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table)
         {
-            $table->boolean('trap');
+            $table->boolean('trap')->default('0');
         });
     }
 
