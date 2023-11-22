@@ -19,12 +19,14 @@ class LoginTest extends TestCase
         $this->assertEquals(200, $response->status());
     }
 
+
     public function test_register_form_is_accessible()
     {
         $response = $this->get('/register');
 
         $this->assertEquals(200, $response->status());
     }
+
 
     public function test_login_redirect_to_dashboard_successfully()
     {
@@ -41,6 +43,7 @@ class LoginTest extends TestCase
         $response->assertRedirect('/dashboard');
     }
 
+
     public function test_auth_user_can_access_dashboard()
     {
         $user = User::factory()->create();
@@ -49,12 +52,14 @@ class LoginTest extends TestCase
         $response->assertStatus(200);
     }
 
+
     public function test_unath_user_cannot_access_dasboard()
     {
         $response = $this->get('/dashboard');
         $response->assertStatus(302);
         $response->assertRedirect('/login');
     }
+
 
     public function test_user_has_name_attribute()
     {
