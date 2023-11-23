@@ -26,10 +26,15 @@ p, hr {
 
 #circle-orbit-container {
     position: relative;
-    top: 60px;
-    left: 50px;
     height: 400px;
     width: 400px;
+}
+
+@media screen and (min-width: 768px) {
+    #circle-orbit-container {
+        top: 60px;
+        left: 50px;
+    }
 }
 
 #inner-orbit {
