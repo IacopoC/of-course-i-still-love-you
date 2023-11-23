@@ -53,7 +53,7 @@ class LoginTest extends TestCase
     }
 
 
-    public function test_unath_user_cannot_access_dasboard()
+    public function test_unath_user_cannot_access_dashboard()
     {
         $response = $this->get('/dashboard');
         $response->assertStatus(302);
