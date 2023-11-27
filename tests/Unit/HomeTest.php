@@ -4,14 +4,15 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-class ExampleTest extends TestCase
+class HomeTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function test_that_true_is_true()
+
+    public function testFailure(): void
     {
         $this->assertTrue(true);
     }
