@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded',function() {
     }
     function errorCallback(error) {
         if (error.code === error.PERMISSION_DENIED) {
-            const myElement = document.querySelector("#location-data-string");
-            myElement.style.display = "none";
+            const locationString = document.querySelector("#location-data-string");
+            locationString.style.display = "none";
         }
     }
 });
