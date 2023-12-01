@@ -3,5 +3,7 @@
     <textarea name="message" id="myeditorinstance" maxlength="255" placeholder="{{ __('What\'s on your mind?') }}">{{ old('message') }}</textarea>
     <input type="hidden" id="location" name="location" value="" />
     <button type="submit" class="btn btn-light mt-2">{{ __('Create') }}</button>
-    <p class="pt-4 text-uppercase"><strong>Where you are:</strong></p><p class="text-white location-data"></p>
+    <div id="location-data-string" class="pt-4">
+    <p class="d-inline">Where you are:</p><p class="text-white location-data d-inline"></p>
+    </div>
 </form>

@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded',function() {
 
                 .catch(error => console.log("Error in address location"));
 
-        })
+        }, errorCallback)
+    }
+    function errorCallback(error) {
+        if (error.code === error.PERMISSION_DENIED) {
+            const myElement = document.querySelector("#location-data-string");
+            myElement.style.display = "none";
+        }
     }
 });
