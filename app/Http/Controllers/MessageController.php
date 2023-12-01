@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
     /**
-     * Display a listing of the resource of specific author.
+     * Display a listing of messages of specific author.
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +23,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Display a listing of the resource in homepage.
+     * Display 3 last messages in homepage.
      *
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +35,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Display messages in a list
+     * Display messages in a list with pagination
      *
      * @return \Illuminate\Http\Response
      */
@@ -47,7 +47,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store message and location.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -63,7 +63,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified message.
      *
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
@@ -77,7 +77,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified message.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Message  $message
@@ -96,7 +96,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete the specified message.
      *
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response

@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the count of messages of the logged in user in dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

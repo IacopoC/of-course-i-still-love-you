@@ -8,6 +8,12 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    /**
+     * Update switch value of form in dashboard.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
 
     public function store(Request $request): RedirectResponse
     {
@@ -15,7 +21,6 @@ class UserController extends Controller
 
         $user = $request->user();
         $user->trap = $trapValue;
-
         $user->save();
 
         return redirect(route('dashboard'));
