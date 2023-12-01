@@ -27,7 +27,7 @@
                                 <div class="card-body">
                                     {!! $message->message !!}
                                     <hr>
-                                    <p class="text-white">Where you are: {{ $message->location }}</p>
+                                    @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
                                 </div>
                             </div>
                         </div>
