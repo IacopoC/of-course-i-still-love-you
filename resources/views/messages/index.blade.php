@@ -48,19 +48,4 @@
             @endforeach
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            @if (Auth::check() and Auth::user()->trap == 1)
-                <iframe src="https://giphy.com/embed/jW1ZmcgPXcasw" width="100%" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            @endif
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    @if (Auth::check() and Auth::user()->trap == 1)
-        <div class="millenium-falcon">
-            <img class="img-fluid millenium-image" src="{{ asset('img/millenium-falcon.png') }}">
-        </div>
-    @endif
-    <div class="height-140"></div>
 @endsection

@@ -112,47 +112,5 @@ p, hr {
     }
 }
 
-@keyframes movimento-tie {
-    0% {
-        top: 0;
-        left: 60%;
-        visibility: visible;
-    }
-    100% {
-        top: 100%;
-        left: 100%;
-        visibility: hidden;
-    }
-}
-
-@keyframes movimento-millenium {
-    0% {
-        top: 50%;
-        left: 0%;
-        visibility: visible;
-    }
-    100% {
-        top: 50%;
-        left: 100%;
-        visibility: hidden;
-    }
-}
-
-.tie-image, .millenium-image {
-    width:20%;
-    z-index:9999;
-    position: absolute;
-}
-
-.tie-image {
-    animation: movimento-tie 4s linear;
-    animation-fill-mode: forwards;
-}
-
-.millenium-image {
-    animation: movimento-millenium 4s linear;
-    animation-fill-mode: forwards;
-}
-
 
 

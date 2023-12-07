@@ -10,25 +10,13 @@
             <div class="row">
             <div class="col-md-8">
             <div class="container-fluid py-5">
-                @if (Auth::check())
-                    @if(Auth::user()->trap == 0)
                         <h1 class="display-5 fw-bold text-white">Of Course I Still Love you</h1>
                         <p class="col-md-8 fs-5 text-white">A messages web application to write texts to the world, register now or login and start writing your messages.</p>
-                    @else
-                        <h1 class="display-5 fw-bold text-white">It's a Trap!</h1>
-                        <p class="col-md-8 fs-5 text-white">Congratulation, you activated the Star Wars version<br> Of Course I Still Love you.</p>
-                    @endif
-                @else
-                    <h1 class="display-5 fw-bold text-white">Of Course I Still Love you</h1>
-                    <p class="col-md-8 fs-5 text-white">A messages web application to write texts to the world, register now or login and start writing your messages.</p>
-                @endif
                 <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
                 <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
             </div>
             </div>
             <div class="col-md-4">
-                @if (Auth::check())
-                @if(Auth::user()->trap == 0)
             <div id="circle-orbit-container">
                 <div id="inner-orbit">
                     <div class="inner-orbit-cirlces"></div>
@@ -40,24 +28,6 @@
                     <div class="outer-orbit-cirlces"></div>
                 </div>
             </div>
-                @else
-                    <div class="mt-5">
-                        <iframe src="https://giphy.com/embed/TZFmvyDvr3WaQ" width="100%" height="205" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                    </div>
-                @endif
-                    @else
-                    <div id="circle-orbit-container">
-                        <div id="inner-orbit">
-                            <div class="inner-orbit-cirlces"></div>
-                        </div>
-                        <div id="middle-orbit">
-                            <div class="middle-orbit-cirlces"></div>
-                        </div>
-                        <div id="outer-orbit">
-                            <div class="outer-orbit-cirlces"></div>
-                        </div>
-                    </div>
-                    @endif
             </div>
             </div>
         </div>
