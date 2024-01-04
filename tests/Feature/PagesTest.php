@@ -18,10 +18,4 @@ class PagesTest extends TestCase
         $this->assertEquals(200, $response->status());
     }
 
-    public function test_list_messages_is_accessible()
-    {
-        $response = $this->get('/messages-list');
-
-        $this->assertEquals(200, $response->status());
-    }
 }

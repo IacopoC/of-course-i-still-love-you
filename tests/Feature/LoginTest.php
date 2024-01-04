@@ -52,6 +52,14 @@ class LoginTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_auth_user_can_access_messages_list()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/messages-list');
+        $response->assertStatus(200);
+    }
+
 
     public function test_unath_user_cannot_access_dashboard()
     {
