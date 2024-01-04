@@ -39,9 +39,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/messages-list">{{ __('Messages List') }}</a>
-                        </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -55,6 +52,9 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="/messages-list">{{ __('Messages List') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
                             </li>
@@ -95,7 +95,6 @@
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
-                <a class="text-white text-decoration-none ps-2" href="/messages-list">{{ __('Messages List') }}</a>
                 @guest
                     @if (Route::has('login'))
                             <a class="text-white text-decoration-none ps-2" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -105,7 +104,7 @@
                     @endif
                  @else
                              <a class="text-white text-decoration-none ps-2" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
-                             <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Messages') }}</a>
+                                <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                   @endguest
                         </div>
                     </div>

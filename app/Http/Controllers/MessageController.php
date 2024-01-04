@@ -23,18 +23,6 @@ class MessageController extends Controller
     }
 
     /**
-     * Display 3 last messages in homepage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(): View
-    {
-        return view('homepage', [
-            'messages' => Message::with('user')->latest()->take(3)->get(),
-        ]);
-    }
-
-    /**
      * Display messages in a list with pagination
      *
      * @return \Illuminate\Http\Response
