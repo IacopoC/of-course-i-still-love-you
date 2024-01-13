@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
+use Multiavatar;
 
 class HomeController extends Controller
 {
@@ -19,16 +19,27 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function get_Multiavatar(): string
+    {
+        $userId = Auth::id();
+        $multiavatar = new Multiavatar();
+        return $multiavatar->generate($userId,null,null);
+
+    }
+
     /**
-     * Show the count of messages of the logged in user in dashboard.
+     * Show the count of messages of the logged-in user in dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(): View
     {
-        $userId = Auth::user()->id;
+        $userId = Auth::id();
+        $svgCode = $this->get_Multiavatar();
+
         return view('dashboard', [
-            'count_messages' => Message::where('user_id',$userId)->count(),
+            'count_messages' => Message::where('user_id',$userId)->count(), 'svgCode' => $svgCode
         ]);
     }
+
 }
