@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Message;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
-use Multiavatar;
 
 class HomeController extends Controller
 {
@@ -22,9 +21,8 @@ class HomeController extends Controller
     public function get_Multiavatar(): string
     {
         $userId = Auth::id();
-        $multiavatar = new Multiavatar();
-        return $multiavatar->generate($userId,null,null);
 
+        return Avatar::getAvatar($userId);
     }
 
     /**

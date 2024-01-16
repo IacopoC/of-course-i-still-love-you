@@ -9,14 +9,23 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+
+    public function get_Multiavatar(): string
+    {
+        $userId = Auth::id();
+
+        return Avatar::getAvatar($userId);
+    }
+
     /**
      * Display a listing of messages of specific author.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(): View
     {
-        $userId = Auth::user()->id;
+        $userId = Auth::id();
         return view('messages.index', [
             'messages' => Message::where('user_id',$userId)->latest()->get(),
         ]);
@@ -29,8 +38,10 @@ class MessageController extends Controller
      */
     public function messages(): View
     {
+        $svgCode = $this->get_Multiavatar();
+
         return view('messages-list', [
-            'messages' => Message::with('user')->latest()->paginate(10),
+            'messages' => Message::with('user')->latest()->paginate(10), 'svgCode' => $svgCode
         ]);
     }
 
