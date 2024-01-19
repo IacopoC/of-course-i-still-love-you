@@ -12,7 +12,7 @@ class MessageController extends Controller
 
     public function get_Multiavatar(): string
     {
-        $userId = Auth::id();
+        $userId = Message::pluck('user_id');
 
         return Avatar::getAvatar($userId);
     }
@@ -39,9 +39,10 @@ class MessageController extends Controller
     public function messages(): View
     {
         $svgCode = $this->get_Multiavatar();
+        $messages = Message::with('user')->latest()->paginate(10);
 
         return view('messages-list', [
-            'messages' => Message::with('user')->latest()->paginate(10), 'svgCode' => $svgCode
+            'messages' => $messages, 'svgCode' => $svgCode
         ]);
     }
 
