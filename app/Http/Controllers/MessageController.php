@@ -26,8 +26,10 @@ class MessageController extends Controller
     public function index(): View
     {
         $userId = Auth::id();
+        $messages = Message::where('user_id',$userId)->latest()->get();
+
         return view('messages.index', [
-            'messages' => Message::where('user_id',$userId)->latest()->get(),
+            'messages' => $messages
         ]);
     }
 

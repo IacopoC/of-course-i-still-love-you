@@ -34,9 +34,10 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
         $svgCode = $this->get_Multiavatar();
+        $count_messages = Message::where('user_id',$userId)->count();
 
         return view('dashboard', [
-            'count_messages' => Message::where('user_id',$userId)->count(), 'svgCode' => $svgCode
+            'count_messages' => $count_messages, 'svgCode' => $svgCode
         ]);
     }
 
