@@ -10,11 +10,18 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
 
-    public function get_Multiavatar(): string
+    public function get_Multiavatar(): array
     {
-        $userId = Message::pluck('user_id');
+        $messages = Message::with('user')->latest()->paginate(10);
 
-        return Avatar::getAvatar($userId);
+        $avatarCodes = [];
+        foreach ($messages as $message) {
+            $userId = $message->user->id;
+            $avatarCode = Avatar::getAvatar($userId);
+            $avatarCodes[$message->id] = $avatarCode;
+        }
+
+        return $avatarCodes;
     }
 
     /**
@@ -40,11 +47,11 @@ class MessageController extends Controller
      */
     public function messages(): View
     {
-        $svgCode = $this->get_Multiavatar();
+        $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
 
         return view('messages-list', [
-            'messages' => $messages, 'svgCode' => $svgCode
+            'messages' => $messages, 'avatarCodes' => $avatarCodes
         ]);
     }
 
