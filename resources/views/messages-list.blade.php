@@ -17,14 +17,12 @@
                     </div>
                     </div>
                 </div>
-                @foreach ($avatarCodes as $avatarCode)
-                    <div class="col-md-2">
-                        <div class="p-2">
-                            <img src="data:image/svg+xml;base64,{{ base64_encode($avatarCode) }}" alt="avatar" class="img-fluid w-25">
+                @foreach ($messages as $message)
+                    <div class="col-md-1">
+                        <div class="pt-4">
+                        <img src="data:image/svg+xml;base64,{{ base64_encode($message->avatar_code) }}" alt="avatar" class="img-fluid">
                         </div>
                     </div>
-                @endforeach
-                @foreach ($messages as $message)
                     <div class="col-md-11">
                         <div class="pt-4">
                             <div class="card bg-dark">

@@ -18,6 +18,13 @@
                 </div>
             @endif
             @foreach ($messages as $message)
+                <div class="row">
+                <div class="col-md-1">
+                    <div class="pt-4">
+                    <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid">
+                    </div>
+                </div>
+            <div class="col-md-11">
                 <div class="pt-4">
                     <div class="card bg-dark">
                         <div class="card-header">
@@ -44,6 +51,8 @@
                         @endif
                         </div>
                     </div>
+                </div>
+            </div>
                 </div>
             @endforeach
         </div>

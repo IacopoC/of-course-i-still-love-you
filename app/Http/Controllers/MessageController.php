@@ -24,34 +24,46 @@ class MessageController extends Controller
         return $avatarCodes;
     }
 
+    public function get_single_Multiavatar(): string
+    {
+        $userId = Auth::id();
+
+        return Avatar::getAvatar($userId);
+    }
+
     /**
-     * Display a listing of messages of specific author.
+     * Display a listing of messages of specific author and single avatar.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
 
     public function index(): View
     {
         $userId = Auth::id();
+        $svgCode = $this->get_single_Multiavatar();
         $messages = Message::where('user_id',$userId)->latest()->get();
 
         return view('messages.index', [
-            'messages' => $messages
+            'messages' => $messages, 'svgCode' => $svgCode
         ]);
     }
 
     /**
-     * Display messages in a list with pagination
+     * Display messages in a list with pagination and corresponding avatar
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function messages(): View
     {
         $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
 
+        foreach ($messages as $message) {
+            $message->avatar_code = $avatarCodes[$message->id];
+        }
+
         return view('messages-list', [
-            'messages' => $messages, 'avatarCodes' => $avatarCodes
+            'messages' => $messages
         ]);
     }
 
@@ -59,7 +71,7 @@ class MessageController extends Controller
      * Store message and location.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
@@ -75,7 +87,7 @@ class MessageController extends Controller
      * Show the form for editing the specified message.
      *
      * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit(Message $message): View
     {
@@ -90,7 +102,7 @@ class MessageController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Message $message): RedirectResponse
     {
