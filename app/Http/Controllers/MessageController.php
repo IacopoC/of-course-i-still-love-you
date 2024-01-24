@@ -70,8 +70,8 @@ class MessageController extends Controller
     /**
      * Store message and location.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  Request  $request
+     * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
@@ -86,7 +86,7 @@ class MessageController extends Controller
     /**
      * Show the form for editing the specified message.
      *
-     * @param  \App\Models\Message  $message
+     * @param  Message  $message
      * @return View
      */
     public function edit(Message $message): View
@@ -100,9 +100,9 @@ class MessageController extends Controller
     /**
      * Update the specified message.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  Request  $request
+     * @param  Message  $message
+     * @return RedirectResponse
      */
     public function update(Request $request, Message $message): RedirectResponse
     {
@@ -119,8 +119,8 @@ class MessageController extends Controller
     /**
      * Delete the specified message.
      *
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
+     * @param  Message  $message
+     * @return RedirectResponse
      */
     public function destroy(Message $message): RedirectResponse
     {

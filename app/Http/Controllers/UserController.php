@@ -11,8 +11,8 @@ class UserController extends Controller
     /**
      * Update switch value of form in dashboard.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  Request  $request
+     * @return RedirectResponse
      */
 
     public function store(Request $request): RedirectResponse
