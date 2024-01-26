@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Confirm - Of Course I still love you
+    Confirm Password- Of Course I still love you
 @endsection
 
 @section('content')
@@ -9,14 +9,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <p class="text-white text-center pb-4">{{ __('Confirm Password') }}</p>
-
-                    {{ __('Please confirm your password before continuing.') }}
+                <p class="text-white text-center">{{ __('Please confirm your password before continuing.') }}</p>
 
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-white text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
