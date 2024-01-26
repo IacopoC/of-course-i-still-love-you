@@ -24,17 +24,11 @@
                         </div>
                     </div>
                     <div class="col-md-11">
-                        <div class="pt-4">
-                            <div class="card bg-dark">
-                                <div class="card-header">
-                                    <span class="text-white">{{ $message->user->name }} - {{ $message->created_at->format('j M Y, g:i a') }} </span>
-                                </div>
-                                <div class="card-body">
+                        <div class="pt-4 pb-4">
+                            <p class="text-white"><strong>{{ $message->user->name }}</strong> | {{ $message->created_at->format('j M Y, g:i a') }} </p>
                                     {!! $message->message !!}
                                     <hr>
                                     @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
-                                </div>
-                            </div>
                         </div>
                     </div>
                 @endforeach

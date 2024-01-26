@@ -9,10 +9,8 @@
     <div class="height-80"></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card bg-dark">
-                <div class="card-header text-white">{{ __('Register') }}</div>
+                <p class="text-white text-center pb-4">{{ __('Register') }}</p>
 
-                <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -74,8 +72,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>

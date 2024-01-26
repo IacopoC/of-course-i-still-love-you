@@ -8,10 +8,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card bg-dark">
-                <div class="card-header text-white">{{ __('Confirm Password') }}</div>
+                <p class="text-white text-center pb-4">{{ __('Confirm Password') }}</p>
 
-                <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
 
                     <form method="POST" action="{{ route('password.confirm') }}">
@@ -45,8 +43,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>
