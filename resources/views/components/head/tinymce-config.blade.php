@@ -3,6 +3,8 @@
     tinymce.init({
         selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
         plugins: 'emoticons wordcount',
+        skin: 'oxide-dark',
+        content_css: 'dark',
         toolbar: 'undo redo | formatselect| bold italic | emoticons',
         setup: function(editor) {
             var max = 255;
