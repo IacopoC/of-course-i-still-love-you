@@ -18,12 +18,12 @@
                     </div>
                 </div>
                 @foreach ($messages as $message)
-                    <div class="col-md-1">
+                    <div class="col-2 col-md-1">
                         <div class="pt-4">
                         <img src="data:image/svg+xml;base64,{{ base64_encode($message->avatar_code) }}" alt="avatar" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-md-11">
+                    <div class="col-10 col-md-11">
                         <div class="pt-4 pb-4">
                             <p class="text-white"><strong>{{ $message->user->name }}</strong> | {{ $message->created_at->format('j M Y, g:i a') }} </p>
                                     {!! $message->message !!}
