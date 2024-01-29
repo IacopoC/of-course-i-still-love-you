@@ -10,20 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
 
-    public function get_Multiavatar(): array
-    {
-        $messages = Message::with('user')->latest()->paginate(10);
-
-        $avatarCodes = [];
-        foreach ($messages as $message) {
-            $userId = $message->user->id;
-            $avatarCode = Avatar::getAvatar($userId);
-            $avatarCodes[$message->id] = $avatarCode;
-        }
-
-        return $avatarCodes;
-    }
-
     public function get_single_Multiavatar(): string
     {
         $userId = Auth::id();
@@ -46,6 +32,26 @@ class MessageController extends Controller
         return view('messages.index', [
             'messages' => $messages, 'svgCode' => $svgCode
         ]);
+    }
+
+    /**
+     * Get Avatar by every user id
+     *
+     * @return array
+     */
+
+    public function get_Multiavatar(): array
+    {
+        $messages = Message::with('user')->latest()->paginate(10);
+
+        $avatarCodes = [];
+        foreach ($messages as $message) {
+            $userId = $message->user->id;
+            $avatarCode = Avatar::getAvatar($userId);
+            $avatarCodes[$message->id] = $avatarCode;
+        }
+
+        return $avatarCodes;
     }
 
     /**
