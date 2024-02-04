@@ -16,9 +16,9 @@
                     @csrf
                     @method('patch')
                     <textarea name="message" id="myeditorinstance" maxlength="255">{{ old('message', $message->message) }}</textarea>
-                    <button type="submit" class="btn btn-light mt-2">{{ __('Edit') }}</button>
+                    <button type="submit" class="btn btn-secondary mt-2">{{ __('Edit') }}</button>
                     <div class="d-inline">
-                        <a href="{{ route('messages.index') }}"><button type="button" class="btn btn-light mt-2 ms-3">Cancel</button></a>
+                        <a href="{{ route('messages.index') }}"><button type="button" class="btn btn-dark mt-2 ms-3">Cancel</button></a>
                     </div>
                 </form>
             </div>

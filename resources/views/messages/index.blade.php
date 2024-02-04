@@ -36,13 +36,13 @@
                             @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
                         @if ($message->user->is(auth()->user()))
                             <div class="d-inline">
-                            <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-light">Edit</button></a>
+                            <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
                             </div>
                                 <form method="POST" class="d-inline" action="{{ route('messages.destroy', $message) }}">
                                 @csrf
                                 @method('delete')
                                 <a href="{{ route('messages.destroy', $message) }}">
-                                    <button type="submit" class="btn btn-light ms-3">Delete</button>
+                                    <button type="submit" class="btn btn-danger ms-3">Delete</button>
                                 </a>
                                 </form>
                         @endif
