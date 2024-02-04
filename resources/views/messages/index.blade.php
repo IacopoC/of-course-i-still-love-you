@@ -13,7 +13,7 @@
             @if(count($messages) > 1)
                 <div class="row">
                     <div class="col-md-9">
-                        <p class="text-white text-uppercase pt-md-5"><strong>your messages:</strong></p>
+                        <p class="text-white text-uppercase pt-5"><strong>your messages:</strong></p>
                     </div>
                 </div>
             @endif
