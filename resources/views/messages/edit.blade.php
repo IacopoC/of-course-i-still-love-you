@@ -7,15 +7,10 @@
 @section('content')
     <div class="container">
         <div class="mt-4">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="text-white text-uppercase pt-md-5"><strong>edit message:</strong></p>
-                </div>
-            </div>
                 <form method="post" action="{{ route('messages.update', $message) }}">
                     @csrf
                     @method('patch')
-                    <label for="myeditorinstance"></label>
+                    <label for="myeditorinstance" class="text-white text-uppercase pt-md-5 pb-4 fw-bold">edit message:</label>
                     <textarea name="message" id="myeditorinstance" maxlength="255">{{ old('message', $message->message) }}</textarea>
                     <button type="submit" class="btn btn-secondary mt-2">{{ __('Edit') }}</button>
                     <div class="d-inline">
