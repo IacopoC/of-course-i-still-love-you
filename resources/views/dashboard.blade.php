@@ -41,7 +41,7 @@
                 </div>
             </div>
             @else
-                    <iframe class="mt-5" src="https://giphy.com/embed/Z1LYiyIPhnG9O" width="100%" height="258" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <iframe class="mt-5 giphy-embed" src="https://giphy.com/embed/Z1LYiyIPhnG9O" width="100%" height="258" allowFullScreen></iframe>
             @endif
         </div>
     </div>
