@@ -15,6 +15,7 @@
                 <form method="post" action="{{ route('messages.update', $message) }}">
                     @csrf
                     @method('patch')
+                    <label for="myeditorinstance"></label>
                     <textarea name="message" id="myeditorinstance" maxlength="255">{{ old('message', $message->message) }}</textarea>
                     <button type="submit" class="btn btn-secondary mt-2">{{ __('Edit') }}</button>
                     <div class="d-inline">
