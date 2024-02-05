@@ -22,15 +22,5 @@
                     </div>
                 </form>
             </div>
-        <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-                @if (Auth::check() and Auth::user()->trap == 1)
-                    <iframe src="https://giphy.com/embed/YJDpfht5PU5i0" width="100%" height="431" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                @endif
-            </div>
         </div>
-            <div class="height-140"></div>
-        </div>
-    </div>
 @endsection

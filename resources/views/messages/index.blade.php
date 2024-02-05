@@ -26,7 +26,7 @@
                 </div>
             <div class="col-10 col-md-11">
                 <div class="pt-4 pb-4">
-                            <p class="text-white"><strong>{{ $message->user->name }}</strong> | {{ $message->created_at->format('j M Y, g:i a') }}</p>
+                            <p class="text-white"><strong>{{ $message->user->name }}</strong> | {{ $message->created_at->format('j M Y, H:i') }}</p>
 
                             {!! $message->message !!}
                         @unless ($message->created_at->eq($message->updated_at))
