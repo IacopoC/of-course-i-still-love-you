@@ -16,14 +16,14 @@
             <p class="text-white pt-4">Counter messages: <strong>{{ $count_messages }}</strong></p>
             <p class="text-white">Email: {{ Auth::user()->email }}</p>
             <p class="text-white">Profile created at: {{ Auth::user()->created_at }}</p>
-                <p class="text-white pt-4">Switch mode:</p>
+                <p class="text-white pt-4 fw-bold">Switch mode:</p>
                 <form method="post" action="{{ route('dashboard') }}">
                     @csrf
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="trapMode1" name="trap">
                     <label class="form-check-label text-white" for="trapMode1">It's a Trap!</label>
                 </div>
-                    <button type="submit" class="btn btn-light mt-2">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-secondary mt-2">{{ __('Save') }}</button>
                 </form>
             </div>
         </div>
