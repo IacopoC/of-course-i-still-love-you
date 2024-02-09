@@ -6,9 +6,19 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
+        @if($count_messages < 1)
+        <div class="col-md-12">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-white">You haven't written any message yet, write your first message...</h6>
+                    <a href="{{ route('messages.index') }}" class="card-link">Create message</a>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="col-md-6">
-            <div class="pt-4">
+            <div class="pt-5">
                 <div class="pb-3">
                 <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid w-25">
                 </div>
