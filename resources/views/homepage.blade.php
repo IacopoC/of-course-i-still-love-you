@@ -22,17 +22,7 @@
             </div>
             </div>
             <div class="col-md-4">
-            <div id="circle-orbit-container">
-                <div id="inner-orbit">
-                    <div class="inner-orbit-cirlces"></div>
-                </div>
-                <div id="middle-orbit">
-                    <div class="middle-orbit-cirlces"></div>
-                </div>
-                <div id="outer-orbit">
-                    <div class="outer-orbit-cirlces"></div>
-                </div>
-            </div>
+                <img src="{{ asset('/img/satellite.png') }}" class="img-fluid" alt="satellite">
             </div>
             </div>
         </div>
