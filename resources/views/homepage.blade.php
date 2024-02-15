@@ -21,9 +21,6 @@
                 @endguest
             </div>
             </div>
-            <div class="col-md-4">
-                <img src="{{ asset('/img/satellite.png') }}" class="img-fluid" alt="satellite">
-            </div>
             </div>
         </div>
     </div>
