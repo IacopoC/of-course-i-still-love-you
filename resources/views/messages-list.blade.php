@@ -4,6 +4,10 @@
     Messages - Of Course I still love you
 @endsection
 
+@section('description')
+    The list of all messages written by every user of the web application. Read them all.
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">

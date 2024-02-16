@@ -4,6 +4,10 @@
     Messages - Of Course I still love you
 @endsection
 
+@section('description')
+    Write your message, read all your messages in the list.
+@endsection
+
 @section('content')
     <div class="container">
         <div class="mt-4">

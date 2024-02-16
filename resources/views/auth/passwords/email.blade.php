@@ -4,6 +4,10 @@
     Email - Of Course I still love you
 @endsection
 
+@section('description')
+    Reset password by email, send password reset link.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

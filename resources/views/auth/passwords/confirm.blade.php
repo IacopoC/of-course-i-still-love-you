@@ -4,6 +4,10 @@
     Confirm Password- Of Course I still love you
 @endsection
 
+@section('description')
+    Please confirm your password before continuing.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

@@ -4,6 +4,10 @@
     Edit - Of Course I still love you
 @endsection
 
+@section('description')
+    Edit a message, make it perfect and readable.
+@endsection
+
 @section('content')
     <div class="container">
         <div class="mt-4">

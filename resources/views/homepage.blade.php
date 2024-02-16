@@ -4,6 +4,10 @@
     Home - Of Course I still love you
 @endsection
 
+@section('description')
+    Welcome to Of Course I Still Love You, a messages web application to write texts to the world, register now or login and start writing your messages.
+@endsection
+
 @section('content')
     <div class="container">
         <div class="p-5 mb-4 bg-dark rounded-3">

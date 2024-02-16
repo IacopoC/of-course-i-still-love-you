@@ -4,6 +4,10 @@
     Dashboard - Of Course I still love you
 @endsection
 
+@section('description')
+    Dashboard where you can see the data of a user and other specific content about a profile.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">

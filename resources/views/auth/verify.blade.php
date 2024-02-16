@@ -4,6 +4,10 @@
     Verify - Of Course I still love you
 @endsection
 
+@section('description')
+    Verify your email address.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

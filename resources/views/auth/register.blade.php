@@ -4,6 +4,10 @@
     Register - Of Course I still love you
 @endsection
 
+@section('description')
+    Register to write and read your messages.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="height-80"></div>

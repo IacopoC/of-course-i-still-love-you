@@ -4,6 +4,10 @@
     Reset - Of Course I still love you
 @endsection
 
+@section('description')
+    Reset password.
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
