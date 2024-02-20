@@ -14,7 +14,7 @@ class Updown extends Model
     {
         $this->message_id = $messageId;
         $this->user_id = $userId;
-        $this->type = 'up';
+        $this->updown = 'up';
         $this->save();
     }
 
@@ -22,7 +22,7 @@ class Updown extends Model
     {
         $this->message_id = $messageId;
         $this->user_id = $userId;
-        $this->type = 'down';
+        $this->updown = 'down';
         $this->save();
     }
 }

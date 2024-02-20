@@ -33,6 +33,8 @@
                                     {!! $message->message !!}
                                     <hr>
                                     @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
+                            <a href="/messages-list/{{ $message->id }}/up" class="up">Up</a>
+                            <a href="/messages-list/{{ $message->id }}/down" class="down">Down</a>
                         </div>
                     </div>
                 @endforeach
