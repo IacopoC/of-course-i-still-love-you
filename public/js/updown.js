@@ -1,17 +1,14 @@
 
 document.addEventListener('DOMContentLoaded',function() {
 
-    let messageId = document.querySelectorAll('[data-id]');
-
-    let allId;
-    messageId.forEach((singleId) => {
-      allId = singleId.dataset.id;
-    });
-
      document.getElementById("up-vote").addEventListener("click", upVote);
 
 function upVote() {
-    let urlUp = `/messages-list/${allId}/up`;
+
+    let dataId = document.querySelector('[data-id]');
+    let singleId = dataId.getAttribute('data-id');
+
+    let urlUp = `/messages-list/${singleId}/up`;
 
     fetch(urlUp, { method:'GET',
     })
