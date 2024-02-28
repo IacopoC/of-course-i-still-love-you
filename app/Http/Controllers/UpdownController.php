@@ -20,6 +20,6 @@ class UpdownController extends Controller
     {
         $downvote = new Updown();
         $downvote->down($messageId, Auth::id());
-        return redirect(route('messages.list'))->with(['downvote' => 'Down!', 'messageid' => $messageId]);;
+        return redirect(route('messages.list'))->with(['downvote' => 'Down!', 'messageid' => $messageId]);
     }
 }
