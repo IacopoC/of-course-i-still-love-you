@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-    <script src="{{asset('js/updown.js')}}"></script>
     <div class="container">
         <div class="row">
             @isset($messages)
@@ -34,8 +33,14 @@
                                     {!! $message->message !!}
                                     <hr>
                                     @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
-                            <a href="#" class="up" id="up-vote" data-id="{{ $message->id }}"><button type="button" class="btn btn-secondary">Up</button></a>
-                            <a href="#" class="down" id="down-vote" data-id="{{ $message->id }}"><button type="button" class="btn btn-secondary ms-3">Down</button></a>
+                            <a href="/messages-list/{{ $message->id }}/up" class="up" id="up-vote"><button type="button" class="btn btn-secondary">Up</button></a>
+                            @if( $message->id == session('messageid'))
+                                <span class="text-white">{{ session('upvote') }}</span>
+                            @endif
+                            <a href="/messages-list/{{ $message->id }}/down" class="down" id="down-vote"><button type="button" class="btn btn-secondary ms-3">Down</button></a>
+                            @if( $message->id == session('messageid'))
+                                <span class="text-white">{{ session('downvote') }}</span>
+                            @endif
                         </div>
                     </div>
                 @endforeach
