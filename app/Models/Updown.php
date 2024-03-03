@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Updown extends Model
 {
@@ -24,5 +25,10 @@ class Updown extends Model
         $this->user_id = $userId;
         $this->updown = 'down';
         $this->save();
+    }
+
+    public function messages(): BelongsTo
+    {
+        return $this->belongsTo(Message::class);
     }
 }

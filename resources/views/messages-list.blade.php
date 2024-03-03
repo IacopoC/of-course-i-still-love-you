@@ -41,6 +41,7 @@
                             @if( $message->id == session('messageid'))
                                 <span class="text-white">{{ session('downvote') }}</span>
                             @endif
+                            <p class="text-white">{{ $message->vote }}</p>
                         </div>
                     </div>
                 @endforeach

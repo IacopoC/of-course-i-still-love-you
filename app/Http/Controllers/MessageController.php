@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Updown;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -63,13 +64,15 @@ class MessageController extends Controller
     {
         $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
+        $votes = Updown::with('messages')->get();
 
         foreach ($messages as $message) {
             $message->avatar_code = $avatarCodes[$message->id];
+            $message->vote = $votes;
         }
 
         return view('messages-list', [
-            'messages' => $messages
+            'messages' => $messages,
         ]);
     }
 
