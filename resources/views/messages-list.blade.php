@@ -14,10 +14,11 @@
             @isset($messages)
                 <div class="pt-4">
                     <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                     <p class="text-white text-uppercase pt-md-5"><strong>all messages:</strong></p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
+                        <p class="text-white text-uppercase pt-md-5"><strong>your votes count: {{ $votes }}</strong></p>
                     </div>
                     </div>
                 </div>
@@ -41,7 +42,6 @@
                             @if( $message->id == session('messageid'))
                                 <span class="text-white">{{ session('downvote') }}</span>
                             @endif
-                            <p class="text-white">{{ $message->vote }}</p>
                         </div>
                     </div>
                 @endforeach

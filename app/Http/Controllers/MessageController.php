@@ -62,17 +62,18 @@ class MessageController extends Controller
      */
     public function messages(): View
     {
+        $userId = Auth::id();
+
         $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
-        $votes = Updown::with('messages')->get();
+        $votes = Updown::with('messages')->where('user_id',$userId)->count();
 
         foreach ($messages as $message) {
             $message->avatar_code = $avatarCodes[$message->id];
-            $message->vote = $votes;
         }
 
         return view('messages-list', [
-            'messages' => $messages,
+            'messages' => $messages, 'votes' => $votes
         ]);
     }
 
