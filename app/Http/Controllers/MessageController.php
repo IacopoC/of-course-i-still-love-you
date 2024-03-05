@@ -55,6 +55,13 @@ class MessageController extends Controller
         return $avatarCodes;
     }
 
+    public function getVotes(): string
+    {
+        $userId = Auth::id();
+
+        return Updown::with('messages')->where('user_id',$userId)->count();
+    }
+
     /**
      * Display messages in a list with pagination and corresponding avatar
      *
@@ -62,11 +69,10 @@ class MessageController extends Controller
      */
     public function messages(): View
     {
-        $userId = Auth::id();
 
         $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
-        $votes = Updown::with('messages')->where('user_id',$userId)->count();
+        $votes = $this->getVotes();
 
         foreach ($messages as $message) {
             $message->avatar_code = $avatarCodes[$message->id];
