@@ -18,7 +18,6 @@
                     <p class="text-white text-uppercase pt-md-5"><strong>all messages:</strong></p>
                     </div>
                     <div class="col-md-2">
-                        <p class="text-white text-uppercase pt-md-5"><strong>your votes count: {{ $votes }}</strong></p>
                     </div>
                     </div>
                 </div>
