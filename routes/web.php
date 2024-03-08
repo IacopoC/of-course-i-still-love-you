@@ -19,9 +19,6 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 Route::view('/', 'homepage');
 Route::get('/messages-list', [App\Http\Controllers\MessageController::class, 'messages'])->name('messages.list')->middleware(['auth', 'verified']);
 
-Route::get('/messages-list/{message}/up', [App\Http\Controllers\UpdownController::class, 'up']);
-Route::get('/messages-list/{message}/down', [App\Http\Controllers\UpdownController::class, 'down']);
-
 Route::resource('messages', MessageController::class)->only(['index', 'store', 'edit', 'update', 'destroy'])->middleware(['auth', 'verified']);
 
 Auth::routes();
