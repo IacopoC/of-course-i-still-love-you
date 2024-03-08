@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Updown;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -55,13 +54,6 @@ class MessageController extends Controller
         return $avatarCodes;
     }
 
-    public function getVotes(): string
-    {
-        $userId = Auth::id();
-
-        return Updown::with('messages')->where('user_id',$userId)->count();
-    }
-
     /**
      * Display messages in a list with pagination and corresponding avatar
      *
@@ -72,14 +64,13 @@ class MessageController extends Controller
 
         $avatarCodes = $this->get_Multiavatar();
         $messages = Message::with('user')->latest()->paginate(10);
-        $votes = $this->getVotes();
 
         foreach ($messages as $message) {
             $message->avatar_code = $avatarCodes[$message->id];
         }
 
         return view('messages-list', [
-            'messages' => $messages, 'votes' => $votes
+            'messages' => $messages
         ]);
     }
 
