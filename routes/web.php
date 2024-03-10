@@ -23,6 +23,8 @@ Route::resource('messages', MessageController::class)->only(['index', 'store', '
 
 Auth::routes();
 
+Route::view('/updown', 'updowns/index');
+
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 Route::post('/dashboard', [App\Http\Controllers\UserController::class, 'store']);
 
