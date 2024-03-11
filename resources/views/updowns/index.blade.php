@@ -16,13 +16,12 @@
                 <form method="post" action="">
                     @csrf
                 <div class="input-group mb-3 mt-4">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Write here your short texts..." maxlength="155">
-                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Do you feel up or down?</button>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Up</a></li>
-                        <li><a class="dropdown-item" href="#">Down</a></li>
-                    </ul>
-                    <button type="submit" class="btn btn-outline-primary">{{ __('Create') }}</button>
+                    <input type="text" class="form-control" name="updown_message" aria-label="Text input with dropdown button" placeholder="Write here your short texts..." maxlength="155" required>
+                    <select class="form-select" aria-label="Default select example" name="updown" required>
+                        <option value="up">Up</option>
+                        <option value="down">Down</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
                 </div>
                 </form>
             </div>
