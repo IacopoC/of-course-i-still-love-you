@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="text-white text-uppercase pt-md-5 fw-bold">updown messages:</p>
-                <form method="post" action="">
+                <form method="post" action="{{ route('updowns.store') }}">
                     @csrf
                 <div class="input-group mb-3 mt-4">
                     <input type="text" class="form-control" name="updown_message" aria-label="Text input with dropdown button" placeholder="Write here your short texts..." maxlength="155" required>
@@ -24,6 +24,9 @@
                     <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
                 </div>
                 </form>
+                @foreach($updowns as $updown)
+                    <p class="text-white">{{ $updown->updown_message }} - {{ $updown->updown }}</p>
+                    @endforeach
             </div>
         </div>
     </div>

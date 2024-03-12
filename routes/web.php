@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UpdownController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -23,7 +24,9 @@ Route::resource('messages', MessageController::class)->only(['index', 'store', '
 
 Auth::routes();
 
-Route::view('/updown', 'updowns/index');
+Route::get('/updown', [App\Http\Controllers\UpdownController::class, 'index'])->middleware(['auth', 'verified']);
+
+Route::resource('updowns', UpdownController::class)->only(['index', 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 Route::post('/dashboard', [App\Http\Controllers\UserController::class, 'store']);

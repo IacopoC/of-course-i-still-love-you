@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Updown extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+    protected $fillable = ['updown_message','updown'];
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

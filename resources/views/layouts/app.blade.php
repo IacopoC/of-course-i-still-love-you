@@ -56,6 +56,9 @@
                                 <a class="nav-link" href="{{ route('messages.list') }}">{{ __('Messages List') }}</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('updowns.index') }}">{{ __('Updowns') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
                             </li>
                             <li class="nav-item">
