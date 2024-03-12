@@ -31,4 +31,18 @@ class UpdownController extends Controller
 
         return redirect(route('updowns.index'));
     }
+
+    /**
+     * Delete the specified updown.
+     *
+     * @param  Updown  $updown
+     * @return RedirectResponse
+     */
+    public function destroy(Updown $updown): RedirectResponse
+    {
+        $this->authorize('delete', $updown);
+        $updown->delete();
+
+        return redirect(route('updowns.index'));
+    }
 }

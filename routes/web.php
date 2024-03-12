@@ -26,7 +26,7 @@ Auth::routes();
 
 Route::get('/updown', [App\Http\Controllers\UpdownController::class, 'index'])->middleware(['auth', 'verified']);
 
-Route::resource('updowns', UpdownController::class)->only(['index', 'store'])->middleware(['auth', 'verified']);
+Route::resource('updowns', UpdownController::class)->only(['index', 'store', 'destroy'])->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 Route::post('/dashboard', [App\Http\Controllers\UserController::class, 'store']);

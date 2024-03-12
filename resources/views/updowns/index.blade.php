@@ -25,7 +25,7 @@
                 </div>
                 </form>
                 @foreach($updowns as $updown)
-                    <p class="text-white">{{ $updown->updown_message }} - {{ $updown->updown }}</p>
+                    <p class="text-white">{{ $updown->updown_message }} - {{ $updown->updown }} | <a href="{{ route('updowns.destroy', $updown) }}">Delete</a></p>
                     @endforeach
             </div>
         </div>
