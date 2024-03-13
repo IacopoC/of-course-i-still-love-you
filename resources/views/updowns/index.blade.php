@@ -25,8 +25,14 @@
                 </div>
                 </form>
                 @foreach($updowns as $updown)
-                    <p class="text-white">{{ $updown->updown_message }} - {{ $updown->updown }} | <a href="{{ route('updowns.destroy', $updown) }}">Delete</a></p>
-                    @endforeach
+                    <form method="post" action="{{ route('updowns.destroy', $updown) }}">
+                        @csrf
+                        @method('delete')
+                        <p class="text-white">{{ $updown->updown_message }} - {{ $updown->updown }} |
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </p>
+                    </form>
+                @endforeach
             </div>
         </div>
     </div>

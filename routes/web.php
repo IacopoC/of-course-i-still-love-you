@@ -26,7 +26,9 @@ Auth::routes();
 
 Route::get('/updown', [App\Http\Controllers\UpdownController::class, 'index'])->middleware(['auth', 'verified']);
 
-Route::resource('updowns', UpdownController::class)->only(['index', 'store', 'destroy'])->middleware(['auth', 'verified']);
+Route::get('/updowns', [UpdownController::class, 'index'])->name('updowns.index')->middleware(['auth', 'verified']);
+Route::post('/updowns', [UpdownController::class, 'store'])->name('updowns.store')->middleware(['auth', 'verified']);
+Route::delete('/updowns/{updown}', [UpdownController::class, 'destroy'])->name('updowns.destroy')->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 Route::post('/dashboard', [App\Http\Controllers\UserController::class, 'store']);
