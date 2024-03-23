@@ -14,7 +14,7 @@ class UpdownController extends Controller
     public function index(): View
     {
         $userId = Auth::id();
-        $updowns = Updown::where('user_id',$userId)->latest()->get();
+        $updowns = Updown::where('user_id',$userId)->latest()->paginate(10);
 
         return view('updowns.index', [
             'updowns' => $updowns

@@ -24,6 +24,7 @@
                     <button type="submit" class="btn btn-secondary">{{ __('Create') }}</button>
                 </div>
                 </form>
+                @isset($updowns)
                 @foreach($updowns as $updown)
                     <div class="mt-4">
                     <form method="post" action="{{ route('updowns.destroy', $updown) }}">
@@ -35,6 +36,10 @@
                     </form>
                     </div>
                 @endforeach
+                    <div class="d-flex">
+                        {!! $updowns->links() !!}
+                    </div>
+                    @endisset
             </div>
         </div>
     </div>
