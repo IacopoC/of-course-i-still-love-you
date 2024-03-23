@@ -30,13 +30,22 @@
                     <form method="post" action="{{ route('updowns.destroy', $updown) }}">
                         @csrf
                         @method('delete')
-                        <p class="text-white">{{ $updown->updown_message }} <span class="fw-bolder @if($updown->updown == 'Up') {{ 'text-success' }} @else {{ 'text-warning' }} @endif">{{ $updown->updown }}</span> | {{ $updown->created_at->format('j M Y, H:i') }}
-                            <button type="submit" class="btn btn-danger ms-4">Delete</button>
-                        </p>
+                        <p>{{ $updown->updown_message }} | {{ $updown->created_at->format('j M Y, H:i') }}</p>
+                         <hr>
+                        @if($updown->updown == 'Up')
+                        <div class="alert alert-success" role="alert">
+                            This is a {{ $updown->updown }} message.
+                        </div>
+                        @else
+                         <div class="alert alert-warning" role="alert">
+                                This is a {{ $updown->updown }} message.
+                         </div>
+                        @endif
+                            <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                     </div>
                 @endforeach
-                    <div class="d-flex">
+                    <div class="d-flex pt-4">
                         {!! $updowns->links() !!}
                     </div>
                     @endisset
