@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="text-white text-uppercase pt-md-5 fw-bold">updown messages:</p>
+                <p class="text-white text-uppercase pt-md-5 fw-bold">create updown messages:</p>
                 <form method="post" action="{{ route('updowns.store') }}" class="mb-5">
                     @csrf
                 <div class="input-group mb-4 mt-4">
