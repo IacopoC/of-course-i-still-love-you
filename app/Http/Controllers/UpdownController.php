@@ -18,6 +18,11 @@ class UpdownController extends Controller
         return Avatar::getAvatar($userId);
     }
 
+    /**
+     * Display a listing of updowns of specific author and single avatar.
+     *
+     * @return View
+     */
     public function index(): View
     {
         $userId = Auth::id();
@@ -29,6 +34,12 @@ class UpdownController extends Controller
         ]);
     }
 
+    /**
+     * Store updown message and dropdown value.
+     *
+     * @param  Request  $request
+     * @return RedirectResponse
+     */
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
