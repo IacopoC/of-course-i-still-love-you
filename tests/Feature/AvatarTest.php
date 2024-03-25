@@ -19,7 +19,6 @@ class AvatarTest extends TestCase
         $this->assertStringContainsString('<svg', $svgCode);
         $this->assertStringContainsString('</svg>', $svgCode);
     }
-
     public function test_avatar_generates_a_different_svg_code_for_different_users(): void
     {
         $userId1 = 1;
