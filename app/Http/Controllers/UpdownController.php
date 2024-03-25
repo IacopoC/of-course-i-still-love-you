@@ -11,13 +11,21 @@ use Illuminate\View\View;
 class UpdownController extends Controller
 {
 
+    public function get_single_Multiavatar(): string
+    {
+        $userId = Auth::id();
+
+        return Avatar::getAvatar($userId);
+    }
+
     public function index(): View
     {
         $userId = Auth::id();
+        $svgCode = $this->get_single_Multiavatar();
         $updowns = Updown::where('user_id',$userId)->latest()->paginate(10);
 
         return view('updowns.index', [
-            'updowns' => $updowns
+            'updowns' => $updowns, 'svgCode' => $svgCode
         ]);
     }
 

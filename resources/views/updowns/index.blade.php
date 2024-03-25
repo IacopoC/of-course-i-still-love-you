@@ -26,11 +26,19 @@
                 </form>
                 @isset($updowns)
                 @foreach($updowns as $updown)
-                    <div class="mt-4">
+                    <div class="my-4">
                     <form method="post" action="{{ route('updowns.destroy', $updown) }}">
                         @csrf
                         @method('delete')
-                        <p>{{ $updown->updown_message }} | {{ $updown->created_at->format('j M Y, H:i') }}</p>
+                        <div class="row">
+                        <div class="col-2 col-md-1">
+                            <div class="pt-2">
+                                <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-10 col-md-11">
+                            <p><strong>{{ $updown->user->name }}</strong> | {{ $updown->created_at->format('j M Y, H:i') }}</p>
+                        <p>{{ $updown->updown_message }}</p>
                          <hr>
                         @if($updown->updown == 'Up')
                         <div class="alert alert-success" role="alert">
@@ -42,6 +50,8 @@
                          </div>
                         @endif
                             <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                        </div>
                     </form>
                     </div>
                 @endforeach
