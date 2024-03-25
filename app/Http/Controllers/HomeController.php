@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
+use App\Models\Updown;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,9 +36,12 @@ class HomeController extends Controller
         $userId = Auth::id();
         $svgCode = $this->get_Multiavatar();
         $count_messages = Message::where('user_id',$userId)->count();
+        $count_updowns = Updown::where('user_id',$userId)->count();
 
         return view('dashboard', [
-            'count_messages' => $count_messages, 'svgCode' => $svgCode
+            'count_messages' => $count_messages,
+            'count_updowns' => $count_updowns,
+            'svgCode' => $svgCode
         ]);
     }
 

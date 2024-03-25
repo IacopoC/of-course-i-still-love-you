@@ -27,7 +27,8 @@
                 <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid w-25">
                 </div>
                 <h3 class="text-white">Welcome <strong>{{ Auth::user()->name }}</strong></h3>
-            <p class="text-white pt-4">Counter messages: <strong>{{ $count_messages }}</strong></p>
+            <p class="text-white pt-4">Counter Messages: <strong>{{ $count_messages }}</strong></p>
+            <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
             <p class="text-white">Email: {{ Auth::user()->email }}</p>
             <p class="text-white">Profile created at: {{ Auth::user()->created_at }}</p>
                 <p class="text-white pt-4 fw-bold">Switch mode:</p>
