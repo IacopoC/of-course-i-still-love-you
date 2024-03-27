@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Messages - Of Course I still love you
+    Messages List - Of Course I still love you
 @endsection
 
 @section('description')
