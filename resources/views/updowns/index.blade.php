@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="text-white text-uppercase pt-md-5 fw-bold">create updown messages:</p>
+                <p class="text-white text-uppercase pt-md-5 fw-bold">create updown message:</p>
                 <form method="post" action="{{ route('updowns.store') }}" class="mb-5">
                     @csrf
                 <div class="input-group mb-4 mt-4">
@@ -40,15 +40,9 @@
                             <p><strong>{{ $updown->user->name }}</strong> | {{ $updown->created_at->format('j M Y, H:i') }}</p>
                         <p>{{ $updown->updown_message }}</p>
                          <hr>
-                        @if($updown->updown == 'Up')
-                        <div class="alert alert-success" role="alert">
-                            This is a {{ $updown->updown }} message.
+                        <div class="alert @if($updown->updown == 'Up') {{'alert-success'}} @else {{'alert-warning'}} @endif" role="alert">
+                            This is a <strong>{{ $updown->updown }}</strong> message.
                         </div>
-                        @else
-                         <div class="alert alert-warning" role="alert">
-                                This is a {{ $updown->updown }} message.
-                         </div>
-                        @endif
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </div>
                         </div>
