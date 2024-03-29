@@ -94,7 +94,7 @@
             <div class="container pt-4 pb-4">
                 <div class="row">
                     <div class="col-md-8">
-                <span class="text-white"> © {{ date('Y') }} - Of Course I Still Love you</span>
+                <span class="text-white"> © {{ date('Y') }} - Of Course I Still Love you | <a class="text-white text-decoration-none" href="{{ route('privacy') }}">{{ __('Privacy Policy') }}</a></span>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
