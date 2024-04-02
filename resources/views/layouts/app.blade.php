@@ -42,27 +42,27 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('messages.list') }}">{{ __('Messages List') }}</a>
+                                <a class="nav-link {{ (request()->is('messages-list')) ? 'active' : '' }}" href="{{ route('messages.list') }}">{{ __('Messages List') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
+                                <a class="nav-link {{ (request()->is('messages')) ? 'active' : '' }}" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a>
+                                <a class="nav-link {{ (request()->is('updowns')) ? 'active' : '' }}" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
+                                <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
