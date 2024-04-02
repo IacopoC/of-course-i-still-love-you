@@ -20,8 +20,8 @@
                     <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
                     <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
                 @else
-                    <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('dashboard') }}">Profile</a></button>
-                    <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('messages.index') }}">Create messages</a></button>
+                    <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('updowns.index') }}">Create Updowns</a></button>
+                    <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('messages.index') }}">Create Messages</a></button>
                 @endguest
             </div>
             </div>
