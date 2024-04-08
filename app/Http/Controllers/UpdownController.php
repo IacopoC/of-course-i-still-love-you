@@ -52,6 +52,39 @@ class UpdownController extends Controller
     }
 
     /**
+     * Show the form for editing the specified message.
+     *
+     * @param  Updown  $updown
+     * @return View
+     */
+    public function edit(Updown $updown): View
+    {
+        $this->authorize('update', $updown);
+        return view('updowns.edit', [
+            'updown' => $updown
+        ]);
+    }
+
+    /**
+     * Update the specified updown message.
+     *
+     * @param  Request  $request
+     * @param  Updown  $updown
+     * @return RedirectResponse
+     */
+    public function update(Request $request, Updown $updown): RedirectResponse
+    {
+        $this->authorize('update', $updown);
+        $validated = $request->validate([
+            'updown_message' => 'required|string|max:155',
+            'updown' => 'required|string',
+        ]);
+        $updown->update($validated);
+
+        return redirect(route('updowns.index'));
+    }
+
+    /**
      * Delete the specified updown.
      *
      * @param  Updown  $updown

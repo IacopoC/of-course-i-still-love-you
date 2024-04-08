@@ -30,6 +30,10 @@ Route::get('/updown', [App\Http\Controllers\UpdownController::class, 'index'])->
 
 Route::get('/updowns', [UpdownController::class, 'index'])->name('updowns.index')->middleware(['auth', 'verified']);
 Route::post('/updowns', [UpdownController::class, 'store'])->name('updowns.store')->middleware(['auth', 'verified']);
+Route::get('/updowns/{updown}', [UpdownController::class, 'edit'])->name('updowns.edit')->middleware(['auth', 'verified']);
+Route::patch('/updowns/{updown}', [UpdownController::class, 'update'])->name('updowns.update')->middleware(['auth', 'verified']);
+
+
 Route::delete('/updowns/{updown}', [UpdownController::class, 'destroy'])->name('updowns.destroy')->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
