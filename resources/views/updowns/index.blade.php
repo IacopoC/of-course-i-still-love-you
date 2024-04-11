@@ -41,13 +41,13 @@
                         <p>{{ $updown->updown_message }}</p>
                          <hr>
                         <div class="alert @if($updown->updown == 'Up') {{'alert-success'}} @else {{'alert-warning'}} @endif" role="alert">
-                            This is a <strong>{{ $updown->updown }}</strong> message.
+                            This is a <strong>{{ $updown->updown }}</strong> message!
                         </div>
                             <div class="d-inline">
                                 <a href="{{ route('updowns.edit', $updown) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
                             </div>
                             <div class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger ms-3">Delete</button>
                             </div>
                         </div>
                         </div>
