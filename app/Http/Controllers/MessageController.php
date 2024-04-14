@@ -55,26 +55,6 @@ class MessageController extends Controller
     }
 
     /**
-     * Display messages in a list with pagination and corresponding avatar
-     *
-     * @return View
-     */
-    public function messages(): View
-    {
-
-        $avatarCodes = $this->get_Multiavatar();
-        $messages = Message::with('user')->latest()->paginate(10);
-
-        foreach ($messages as $message) {
-            $message->avatar_code = $avatarCodes[$message->id];
-        }
-
-        return view('messages-list', [
-            'messages' => $messages
-        ]);
-    }
-
-    /**
      * Store message and location.
      *
      * @param  Request  $request

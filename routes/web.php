@@ -20,8 +20,6 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 Route::view('/', 'homepage');
 Route::view('/privacy-policy', 'privacy')->name('privacy');
 
-Route::get('/messages-list', [App\Http\Controllers\MessageController::class, 'messages'])->name('messages.list')->middleware(['auth', 'verified']);
-
 Route::resource('messages', MessageController::class)->only(['index', 'store', 'edit', 'update', 'destroy'])->middleware(['auth', 'verified']);
 
 Auth::routes();

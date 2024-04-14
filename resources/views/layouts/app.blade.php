@@ -53,9 +53,6 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link {{ (request()->is('messages-list')) ? 'active' : '' }}" href="{{ route('messages.list') }}">{{ __('Messages List') }}</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link {{ (request()->is('messages')) ? 'active' : '' }}" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                             </li>
                             <li class="nav-item">
