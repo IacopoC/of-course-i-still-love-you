@@ -55,5 +55,8 @@
                 </div>
             @endforeach
         </div>
+        <div class="d-flex pt-4">
+            {!! $messages->links() !!}
+        </div>
     </div>
 @endsection

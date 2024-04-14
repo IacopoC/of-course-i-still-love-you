@@ -27,7 +27,7 @@ class MessageController extends Controller
     {
         $userId = Auth::id();
         $svgCode = $this->get_single_Multiavatar();
-        $messages = Message::where('user_id',$userId)->latest()->get();
+        $messages = Message::where('user_id',$userId)->latest()->paginate(10);
 
         return view('messages.index', [
             'messages' => $messages, 'svgCode' => $svgCode
