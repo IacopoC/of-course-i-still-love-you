@@ -103,8 +103,8 @@
                             <a class="text-white text-decoration-none ps-2" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
                  @else
+                             <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                              <a class="text-white text-decoration-none ps-2" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
-                                <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                   @endguest
                         </div>
                     </div>
