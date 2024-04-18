@@ -39,6 +39,9 @@
                         <div class="col-10 col-md-11">
                             <p><strong>{{ $updown->user->name }}</strong> | {{ $updown->created_at->format('j M Y, H:i') }}</p>
                         <p>{{ $updown->updown_message }}</p>
+                            @unless ($updown->created_at->eq($updown->updated_at))
+                                <p class="text-white">- edited</p>
+                            @endunless
                          <hr>
                         <div class="alert @if($updown->updown == 'Up') {{'alert-success'}} @else {{'alert-warning'}} @endif" role="alert">
                             This is a <strong>{{ $updown->updown }}</strong> message!
