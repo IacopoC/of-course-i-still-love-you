@@ -31,7 +31,6 @@
             <div class="col-10 col-md-11">
                 <div class="pt-4 pb-4">
                             <p class="text-white"><strong>{{ $message->user->name }}</strong> | {{ $message->created_at->format('j M Y, H:i') }}</p>
-
                             {!! $message->message !!}
                         @unless ($message->created_at->eq($message->updated_at))
                             <p class="text-white">- edited</p>
@@ -45,9 +44,28 @@
                                 <form method="POST" class="d-inline" action="{{ route('messages.destroy', $message) }}">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('messages.destroy', $message) }}">
-                                    <button type="submit" class="btn btn-danger ms-3">Delete</button>
-                                </a>
+                                    <button type="button" class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $message->id }}">Delete</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="deleteModal-{{ $message->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Message</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Do you want to delete this Message?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <a href="{{ route('messages.destroy', $message) }}">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal -->
                                 </form>
                         @endif
                 </div>
