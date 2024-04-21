@@ -1,6 +1,6 @@
 <form method="post" action="{{ route('messages.store') }}">
     @csrf
-    <label for="myeditorinstance" class="text-white text-uppercase pt-md-5 pb-4 fw-bold">create message:</label>
+    <label for="myeditorinstance" class="text-white text-uppercase pt-md-2 pb-4 fw-bold">create message:</label>
     <textarea name="message" id="myeditorinstance" maxlength="255">{{ old('message') }}</textarea>
     <input type="hidden" id="location" name="location" value="" />
     <button type="submit" class="btn btn-secondary mt-2">{{ __('Create') }}</button>
