@@ -87,30 +87,26 @@
         <main class="py-4 bg-dark">
             @yield('content')
         </main>
-        <footer class="footer bg-dark">
-            <div class="container pt-4 pb-4">
-                <div class="row">
-                    <div class="col-md-8">
-                <span class="text-white"> © {{ date('Y') }} - Of Course I Still Love you | <a class="text-white text-decoration-none" href="{{ route('privacy') }}">{{ __('Privacy Policy') }}</a></span>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center">
+        <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">{{ date('Y') }} - Of Course I Still Love you | <a class="text-body-secondary text-decoration-none" href="{{ route('privacy') }}">{{ __('Privacy Policy') }}</a></p>
+
+            <ul class="nav col-md-4 justify-content-end">
                 @guest
                     @if (Route::has('login'))
-                            <a class="text-white text-decoration-none ps-2" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     @endif
                     @if (Route::has('register'))
-                            <a class="text-white text-decoration-none ps-2" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     @endif
-                 @else
-                             <a class="text-white text-decoration-none ps-2" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
-                             <a class="text-white text-decoration-none ps-2" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
-                  @endguest
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @else
+                    <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a></li>
+                    <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a></li>
+                    <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('dashboard') }}">{{ __('Profile') }}</a></li>
+                @endguest
+            </ul>
         </footer>
+        </div>
     </div>
     <script>
         window.google_api_key = "{{ env('GOOGLE_LOCATION_KEY') }}";
