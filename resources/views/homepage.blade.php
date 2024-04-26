@@ -17,11 +17,11 @@
                         <h1 class="display-5 fw-bold text-white">Of Course I Still Love you</h1>
                         <p class="col-md-8 fs-5 text-white">A messages web application to write texts to the world, register now or login and start writing your messages.</p>
                 @guest
-                    <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
-                    <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
+                    <button class="btn btn-primary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
+                    <button class="btn btn-secondary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
                 @else
-                    <button class="btn btn-primary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('updowns.index') }}">Create Updowns</a></button>
-                    <button class="btn btn-secondary btn-lg" type="button"><a class="text-white text-decoration-none" href="{{ route('messages.index') }}">Create Messages</a></button>
+                    <button class="btn btn-primary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('updowns.index') }}">Create Updowns</a></button>
+                    <button class="btn btn-secondary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('messages.index') }}">Create Messages</a></button>
                 @endguest
             </div>
             </div>
