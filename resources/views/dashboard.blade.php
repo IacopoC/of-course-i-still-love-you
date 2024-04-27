@@ -33,9 +33,10 @@
             @endif
         <div class="col-md-6">
             <div class="pt-4">
-            <h3>Welcome <strong>{{ Auth::user()->name }}</strong></h3>
+            <h3>Welcome <strong>{{ Auth::user()->name }}</strong>, this is your dashboard!</h3>
             <p class="pt-4">Counter Messages: <strong>{{ $count_messages }}</strong></p>
             <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
+            <p class="pt-4">Username: {{ Auth::user()->name }}</p>
             <p>Email: {{ Auth::user()->email }}</p>
             <p>Profile created at: {{ Auth::user()->created_at }}</p>
             <p class="pt-4 fw-bold">Switch mode:</p>
