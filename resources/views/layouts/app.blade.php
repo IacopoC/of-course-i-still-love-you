@@ -48,7 +48,7 @@
                         <a class="nav-link text-body-secondary {{ (request()->is('updowns')) ? 'active' : '' }}" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-body-secondary {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Profile') }}</a>
+                        <a class="nav-link text-body-secondary {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-body-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -89,7 +89,7 @@
                 @else
                     <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a></li>
                     <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a></li>
-                    <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('dashboard') }}">{{ __('Profile') }}</a></li>
+                    <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
                 @endguest
             </ul>
         </footer>
