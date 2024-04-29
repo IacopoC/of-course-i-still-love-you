@@ -1,6 +1,6 @@
 # Of Course I Still Love You
 
-A messages web application to write texts to the world
+A web application to write private texts messages.
 
 ## Built With
 
@@ -9,6 +9,7 @@ A messages web application to write texts to the world
 ## Features
 
 * Write, Update, Delete private messages (255 characters limit).
+* Write, Update, Delete Updown messages (155 characters limit).
 * Every message is geolocated using Google Maps API.
 * Funny hidden functionality (It's a Trap!).
 
