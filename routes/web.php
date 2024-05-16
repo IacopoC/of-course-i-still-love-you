@@ -18,7 +18,6 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 */
 
 Route::view('/', 'homepage');
-Route::view('/privacy-policy', 'privacy')->name('privacy');
 
 Route::resource('messages', MessageController::class)->only(['index', 'store', 'edit', 'update', 'destroy'])->middleware(['auth', 'verified']);
 

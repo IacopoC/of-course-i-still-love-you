@@ -17,12 +17,4 @@ class PagesTest extends TestCase
 
         $this->assertEquals(200, $response->status());
     }
-
-    public function test_privacy_is_accessible()
-    {
-        $response = $this->get('/privacy-policy');
-
-        $this->assertEquals(200, $response->status());
-    }
-
 }
