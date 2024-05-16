@@ -3,7 +3,7 @@
 <head>
     <script type="text/javascript">
         var _iub = _iub || [];
-        _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"cookiePolicyInOtherWindow":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","lang":"en-GB","perPurposeConsent":true,"siteId":3619398,"usprApplies":true,"whitelabel":false,"cookiePolicyId":12119787, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true,"showTitle":false }};
+        _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"cookiePolicyInOtherWindow":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","lang":"en-GB","perPurposeConsent":true,"siteId":3619398,"usprApplies":true,"whitelabel":false,"cookiePolicyId":{{ env('IUBENDA_KEY') }}, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true,"showTitle":false }};
     </script>
     <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3619398.js"></script>
     <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
