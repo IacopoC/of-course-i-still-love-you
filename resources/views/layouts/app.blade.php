@@ -59,9 +59,9 @@
                         <a class="nav-link text-body-secondary {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-body-secondary" href="#">
+                        <p class="nav-link text-body-secondary mb-0">
                             {{ Auth::user()->name }}
-                        </a>
+                        </p>
                     </li>
                     <li class="nav-item">
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
