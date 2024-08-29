@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="container">
-        <div class="p-5 mb-4 bg-dark rounded-3">
+        <div class="py-5 mb-4 bg-dark rounded-3">
             <div class="row">
             <div class="col-md-8">
             <div class="container-fluid py-5">
