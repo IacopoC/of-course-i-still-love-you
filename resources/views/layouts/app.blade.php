@@ -77,14 +77,16 @@
             @yield('content')
         </main>
         <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary">{{ date('Y') }} - Of Course I Still Love you</p>
-
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="p-2"><a href="https://www.iubenda.com/privacy-policy/{{ env('IUBENDA_KEY') }}" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a></li><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-                <li class="p-2"><a href="https://www.iubenda.com/privacy-policy/{{ env('IUBENDA_KEY') }}/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a></li><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-            </ul>
-        </footer>
+            <footer class="text-body-secondary py-5">
+                <div class="container">
+                    <p class="float-end mb-1">
+                        <a href="#">Back to top</a>
+                    </p>
+                    <p class="mb-1">{{ date('Y') }} - Of Course I Still Love you</p>
+                    <a href="https://www.iubenda.com/privacy-policy/{{ env('IUBENDA_KEY') }}" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a></li><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                    <a href="https://www.iubenda.com/privacy-policy/{{ env('IUBENDA_KEY') }}/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a></li><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                </div>
+            </footer>
         </div>
     </div>
     <script>
