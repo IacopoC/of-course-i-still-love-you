@@ -5,7 +5,7 @@
 @endsection
 
 @section('description')
-    Welcome to Of Course I Still Love You, a web application to write private text messages, register now or login and start writing your messages.
+    Welcome to Of Course I Still Love You, a website to write private text messages, register now or login and start writing your messages.
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
             <div class="col-md-8">
             <div class="container-fluid py-5">
                         <h1 class="display-5 fw-bold text-white">Of Course I Still Love you</h1>
-                        <p class="col-md-8 fs-5 text-white">A web application to write private text messages, register now or login and start writing.</p>
+                        <p class="col-md-8 fs-5 text-white">A website to write private text messages, register now or login and start writing.</p>
                 @guest
                     <button class="btn btn-primary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('register') }}">Register now</a></button>
                     <button class="btn btn-secondary btn-lg mt-2" type="button"><a class="text-white text-decoration-none" href="{{ route('login') }}">Login</a></button>
