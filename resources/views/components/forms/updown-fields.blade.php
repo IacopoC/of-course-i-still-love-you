@@ -6,6 +6,6 @@
             <option value="Up">Up</option>
             <option value="Down">Down</option>
         </select>
-        <button type="submit" class="btn btn-secondary">{{ __('Create') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
     </div>
 </form>
