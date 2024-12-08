@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',function() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;
-            lat = position.coords.latitude
+            lat = position.coords.latitude;
 
             const location_key =  window.google_api_key;
             const api_location = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${location_key}`;
@@ -23,15 +23,16 @@ document.addEventListener('DOMContentLoaded',function() {
                 .then(location_data => {
 
                     let {compound_code} = location_data.plus_code;
-                    let compound_short = compound_code.slice(8);
+                    const compoundShort = compound_code.slice(8);
+                    let coordinates = `Latitude: ${lat}°, Longitude: ${long}°`;
 
-                    locationData.innerHTML = compound_short;
-                    document.getElementById('location').value = compound_short
+                    locationData.textContent = compoundShort + ' - ' + coordinates;
+                    document.getElementById('location').value = compoundShort;
 
 
                 })
 
-                .catch(error => console.log("Error in address location"));
+                .catch(error => console.log("Error in address location", error));
 
         }, errorCallback)
     }

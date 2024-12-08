@@ -36,7 +36,7 @@
                             <p class="text-white">- edited</p>
                         @endunless
                             <hr>
-                            @if(!empty($message->location))<p class="text-white"> Where you are: {{ $message->location }} </p>@endif
+                            @if(!empty($message->location))<p class="text-white">{{ $message->location }} </p>@endif
                         @if ($message->user->is(auth()->user()))
                             <div class="d-inline">
                             <a href="{{ route('messages.edit', $message) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
