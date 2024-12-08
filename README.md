@@ -4,6 +4,7 @@ A small website where you can write private texts messages or updowns messages (
 
 ### Dependencies
 - [Laravel](https://laravel.com/)
+- [TinyMCE](https://www.tiny.cloud/)
 
 ### API
 - [Google Maps API](https://developers.google.com/maps?hl=it)
