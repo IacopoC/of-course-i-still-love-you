@@ -1,7 +1,7 @@
 <form method="post" action="{{ route('messages.store') }}">
     @csrf
     <label for="myeditorinstance" class="text-white text-uppercase pt-md-2 pb-4 fw-bold">create message:</label>
-    <p>255 characters limit</p>
+    <p><a href="https://maps.google.com/pluscodes/">What is a Plus Code?</a> - Message editor has 255 characters limit</p>
     <div class="alert alert-light" role="alert" id="location-data-string">
         <span class="text-white location-data"></span>
     </div>
