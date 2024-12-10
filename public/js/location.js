@@ -23,11 +23,10 @@ document.addEventListener('DOMContentLoaded',function() {
                 .then(location_data => {
 
                     let {compound_code} = location_data.plus_code;
-                    const compoundShort = compound_code.slice(8);
                     let coordinates = `Latitude: ${lat}°, Longitude: ${long}°`;
 
-                    locationData.textContent = compoundShort + ' - ' + coordinates;
-                    document.getElementById('location').value = compoundShort;
+                    locationData.textContent = 'Location Plus Code and Address: ' + compound_code + ' - ' + coordinates;
+                    document.getElementById('location').value = compound_code;
 
 
                 })
