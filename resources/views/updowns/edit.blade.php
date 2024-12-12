@@ -12,6 +12,7 @@
     <div class="container">
         <div class="mt-4">
             <p class="text-white text-uppercase pt-md-5 fw-bold">edit updown message:</p>
+            <p>Updown text field has 155 characters limit</p>
             <form method="post" action="{{ route('updowns.update', $updown) }}">
                 @csrf
                 @method('patch')
