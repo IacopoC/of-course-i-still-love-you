@@ -15,6 +15,7 @@
                     @csrf
                     @method('patch')
                     <label for="myeditorinstance" class="text-white text-uppercase pt-md-5 pb-4 fw-bold">edit message:</label>
+                    <p><a href="https://maps.google.com/pluscodes/">What is a Plus Code?</a> - Message editor has 255 characters limit</p>
                     @if(!empty($message->location))
                         <div class="alert alert-light" role="alert">
                             <span class="text-white">Location Plus Code and Address: {{ $message->location }} </span>
