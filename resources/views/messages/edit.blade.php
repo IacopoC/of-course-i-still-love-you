@@ -15,6 +15,11 @@
                     @csrf
                     @method('patch')
                     <label for="myeditorinstance" class="text-white text-uppercase pt-md-5 pb-4 fw-bold">edit message:</label>
+                    @if(!empty($message->location))
+                        <div class="alert alert-light" role="alert">
+                            <span class="text-white">Location Plus Code and Address: {{ $message->location }} </span>
+                        </div>
+                    @endif
                     <textarea name="message" id="myeditorinstance" maxlength="255">{{ old('message', $message->message) }}</textarea>
                     <button type="submit" class="btn btn-secondary mt-2">{{ __('Edit') }}</button>
                     <div class="d-inline">
