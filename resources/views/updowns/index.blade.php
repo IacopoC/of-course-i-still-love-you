@@ -35,7 +35,7 @@
                             @endunless
                          <hr>
                         <div class="alert @if($updown->updown == 'Up') {{'alert-success'}} @else {{'alert-warning'}} @endif" role="alert">
-                            This is a <strong>{{ $updown->updown }}</strong> message!
+                            I am <strong>{{ $updown->updown }}</strong>!
                         </div>
                             <div class="d-inline">
                                 <a href="{{ route('updowns.edit', $updown) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
