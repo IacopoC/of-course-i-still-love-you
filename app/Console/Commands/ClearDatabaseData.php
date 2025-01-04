@@ -20,7 +20,7 @@ class ClearDatabaseData extends Command
      *
      * @var string
      */
-    protected $description = 'Cancella periodicamente i dati dalle tabelle messages e updowns';
+    protected $description = 'Periodically clears data from the messages and updowns tables';
 
     /**
      * Execute the console command.
@@ -33,11 +33,11 @@ class ClearDatabaseData extends Command
                    $deletedMessages = DB::table('messages')->where('created_at', '<', $oneMonthAgo)->delete();
                    $deletedUpdowns = DB::table('updowns')->where('created_at', '<', $oneMonthAgo)->delete();
 
-                   $this->info("Cancellati " . $deletedMessages . " record dalla tabella messages.");
-                   $this->info("Cancellati " . $deletedUpdowns . " record dalla tabella updowns.");
+                   $this->info("Deleted " . $deletedMessages . " records from the messages table.");
+                   $this->info("Deleted " . $deletedUpdowns . " records from the updowns table.");
 
                } catch (\Exception $e) {
-                    $this->error("Errore durante la cancellazione dei dati: " . $e->getMessage());
+                    $this->error("Error while deleting data: " . $e->getMessage());
                 }
     }
 }
