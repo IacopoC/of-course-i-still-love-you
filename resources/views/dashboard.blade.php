@@ -40,7 +40,7 @@
             <p class="pt-4">Username: {{ Auth::user()->name }}</p>
             <p>Email: {{ Auth::user()->email }}</p>
             <p>Profile created at: {{ Auth::user()->created_at }}</p>
-                <p class="pt-4"><strong>Warning:</strong> Data older than a month will be deleted</p>
+                <p class="pt-4"><strong>Warning:</strong> Messages and Updowns older than a month will be deleted</p>
             <p class="pt-4 fw-bold">Switch mode:</p>
             </div>
             <form method="post" action="{{ route('dashboard') }}">

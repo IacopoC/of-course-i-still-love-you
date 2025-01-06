@@ -14,6 +14,7 @@
             <div class="col-md-12">
                 <p class="text-white text-uppercase pt-md-5 fw-bold">create updown message:</p>
                 <p>Updown text field has 155 characters limit</p>
+                <p><strong>Warning:</strong> Updowns older than a month will be deleted</p>
                 <x-forms.updown-fields/>
                 @isset($updowns)
                 @foreach($updowns as $updown)
