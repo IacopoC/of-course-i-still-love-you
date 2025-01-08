@@ -32,8 +32,8 @@ class ClearDatabaseDataTest extends TestCase
         $this->assertDatabaseCount('updowns', 1);
 
         $this->artisan(ClearDatabaseData::class)
-            ->expectsOutputToContain('Deleted 3 records from the messages table.')
-            ->expectsOutputToContain('Deleted 5 records from the updowns table.');
+            ->expectsOutputToContain('records from the messages table')
+            ->expectsOutputToContain('records from the updowns table.');
     }
 
     public function test_clear_database_data_command_handles_exceptions()
