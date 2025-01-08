@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Updown;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,6 +22,7 @@ class UpdownFactory extends Factory
         return [
             'updown_message' => $this->faker->sentence,
             'updown' => $this->faker->sentence,
+            'user_id' => User::factory(),
         ];
     }
 }
