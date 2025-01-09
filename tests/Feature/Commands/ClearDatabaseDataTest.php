@@ -19,21 +19,17 @@ class ClearDatabaseDataTest extends TestCase
         $oneMonthAgo = Carbon::now()->subMonth();
         $recentDate = Carbon::now()->subDays(10);
 
-        Message::factory()->count(3)->create(['created_at' => $oneMonthAgo->copy()->subDay()]);
+        $messagesToDelete = Message::factory()->count(3)->create(['created_at' => $oneMonthAgo->copy()->subDay()]);
         Message::factory()->count(2)->create(['created_at' => $recentDate]);
-        Updown::factory()->count(5)->create(['created_at' => $oneMonthAgo->copy()->subDays(2)]);
+        $updownsToDelete = Updown::factory()->count(5)->create(['created_at' => $oneMonthAgo->copy()->subDays(2)]);
         Updown::factory()->count(1)->create(['created_at' => $recentDate]);
 
-
-        $this->artisan(ClearDatabaseData::class)->assertSuccessful();
-
+        $this->artisan(ClearDatabaseData::class)
+            ->expectsOutputToContain(sprintf('Deleted %d records from the messages table.', $messagesToDelete->count()))
+            ->expectsOutputToContain(sprintf('Deleted %d records from the updowns table.', $updownsToDelete->count()));
 
         $this->assertDatabaseCount('messages', 2);
         $this->assertDatabaseCount('updowns', 1);
-
-        $this->artisan(ClearDatabaseData::class)
-            ->expectsOutputToContain('records from the messages table')
-            ->expectsOutputToContain('records from the updowns table.');
     }
 
     public function test_clear_database_data_command_handles_exceptions()
