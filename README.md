@@ -15,6 +15,7 @@ A small website where you can write private texts messages or updowns messages (
 - Write, Update, Delete Updown messages (155 characters limit).
 - Every message is geolocated using Google Maps API (If geolocation is enabled from the browser).
 - Funny hidden functionality (It's a Trap!).
+- Messages and Updowns records will be deleted after a month.
 
 ### Link
 
