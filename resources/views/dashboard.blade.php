@@ -33,7 +33,7 @@
             @endif
         <div class="col-md-6">
             <div class="pt-4">
-            <h4>Welcome <strong>{{ Auth::user()->name }}</strong>, this is your dashboard!</h4>
+            <p class="text-uppercase fw-bold">Welcome {{ Auth::user()->name }} to your dashboard:</p>
             <div class="pt-4">
             <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
             <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
