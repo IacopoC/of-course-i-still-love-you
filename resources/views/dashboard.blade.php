@@ -11,29 +11,26 @@
 @section('content')
 <div class="container">
     <div class="row">
-        @if($count_messages < 1)
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2">You haven't written any Message yet, write your first Message...</h6>
-                    <a href="{{ route('messages.index') }}" class="card-link">Create Message</a>
-                </div>
-            </div>
-        </div>
-        @endif
-            @if($count_updowns < 1)
-                <div class="col-md-12 pt-4">
+            <p class="text-uppercase fw-bold">Welcome {{ Auth::user()->name }} to your dashboard:</p>
+            @if($count_messages < 1)
                     <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2">You haven't written any Message yet, write your first Message...</h6>
+                            <a href="{{ route('messages.index') }}" class="card-link">Create Message</a>
+                        </div>
+                    </div>
+            @endif
+            @if($count_updowns < 1)
+                    <div class="card mt-4">
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2">You haven't written any Updowns yet, write your first Updown...</h6>
                             <a href="{{ route('updowns.index') }}" class="card-link">Create Updown</a>
                         </div>
                     </div>
-                </div>
             @endif
+        </div>
         <div class="col-md-6">
-            <div class="pt-4">
-            <p class="text-uppercase fw-bold">Welcome {{ Auth::user()->name }} to your dashboard:</p>
             <div class="pt-4">
             <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
             <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
@@ -51,9 +48,8 @@
                 <button type="submit" class="btn btn-secondary mt-2">{{ __('Save') }}</button>
             </form>
             </div>
-        </div>
             <div class="col-md-6">
-                    <div class="pb-3 pt-4 text-center">
+                    <div class="pt-5 text-center">
                         <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid w-25">
                 </div>
             </div>
