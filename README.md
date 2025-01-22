@@ -8,6 +8,7 @@ A small website where you can write private texts messages or updowns messages (
 
 ### API
 - [Google Maps API](https://developers.google.com/maps?hl=it)
+- [Multiavatar API](https://api.multiavatar.com/)
 
 ### Features
 
