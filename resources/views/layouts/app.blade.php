@@ -64,7 +64,7 @@
                         </p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</a>
+                        <button type="button" class="btn btn-link nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</button>
                     </li>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
