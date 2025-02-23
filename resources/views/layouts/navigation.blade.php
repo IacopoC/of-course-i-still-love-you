@@ -37,6 +37,9 @@
                         <button type="button" class="btn btn-link pb-2" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
                     </li>
                 @endguest
+                    <li class="nav-item">
+                        <a href="mailto:{{ env('CONTACT_EMAIL') }}"><button type="button" class="btn btn-primary pb-2">Contact us</button></a>
+                    </li>
             </ul>
         </div>
     </div>
