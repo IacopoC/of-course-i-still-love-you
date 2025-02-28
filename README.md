@@ -1,10 +1,11 @@
 ### Of Course I Still Love You - Website
 
-A small website where you can write private texts messages or updowns messages (short messages). This is a demo project built using Laravel framework and is not a production ready website.
+A small website where you can write private texts notes or updowns messages (short messages). This is a demo project built using Laravel framework and is not a production ready website.
 
 ### Dependencies
 - [Laravel](https://laravel.com/)
 - [TinyMCE](https://www.tiny.cloud/)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ### API
 - [Google Maps API](https://developers.google.com/maps?hl=it)
