@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <p class="text-uppercase fw-bold">Welcome {{ Auth::user()->name }} to your dashboard:</p>
+            <p class="text-uppercase fw-bold pt-md-5">Welcome {{ Auth::user()->name }} to your dashboard:</p>
             @if($count_messages < 1)
                     <div class="card">
                         <div class="card-body">
@@ -30,15 +30,29 @@
                     </div>
             @endif
         </div>
-        <div class="col-md-6">
-            <div class="pt-4">
+        <div class="col-md-3">
+            <div class="pt-5">
+                <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid w-50">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pt-5">
+                <h4 class="pb-1">User data:</h4>
+                <p>Username: <strong>{{ Auth::user()->name }}</strong></p>
+                <p>Email: <strong>{{ Auth::user()->email }}</strong></p>
+                <p>Profile created: <strong>{{ Auth::user()->created_at }}</strong></p>
+            </div>
+            </div>
+        <div class="col-md-3">
+            <div class="pt-5">
+                <h4 class="pb-1">Activity data:</h4>
             <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
             <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
-            <p class="pt-4">Username: {{ Auth::user()->name }}</p>
-            <p>Email: {{ Auth::user()->email }}</p>
-            <p>Profile created at: {{ Auth::user()->created_at }}</p>
-            <p class="pt-4 fw-bold">Switch mode:</p>
             </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pt-5">
+            <h4>Switch mode:</h4>
             <form method="post" action="{{ route('dashboard') }}">
                 @csrf
                 <div class="form-check form-switch">
@@ -47,12 +61,8 @@
                 </div>
                 <button type="submit" class="btn btn-secondary mt-2">{{ __('Save') }}</button>
             </form>
-            </div>
-            <div class="col-md-6">
-                    <div class="pt-5 text-center">
-                        <img src="data:image/svg+xml;base64,{{ base64_encode($svgCode) }}" alt="avatar" class="img-fluid w-25">
-                </div>
-            </div>
+        </div>
+        </div>
         </div>
         <div class="col-md-12">
             @if(Auth::user()->trap == 1)
