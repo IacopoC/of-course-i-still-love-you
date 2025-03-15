@@ -8,3 +8,7 @@
     background-color: #343a40 !important;
 }
 
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
