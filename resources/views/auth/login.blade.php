@@ -12,6 +12,7 @@
     <div class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('login') }}">
             @csrf
+            <img class="mb-4 rounded-circle" src="{{ asset('img/logo-of-course-p.png') }}" alt="logo">
             <h1 class="h3 my-3 fw-normal">Please login</h1>
             <div class="form-floating">
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="name@example.com">
