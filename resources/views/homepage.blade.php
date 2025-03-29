@@ -25,6 +25,10 @@
                 @endguest
             </div>
             </div>
+                <div class="col-md-4">
+                    <img src="{{ asset('img/logo-of-course.png') }}" class="img-fluid rounded-circle" alt="logo">
+                </div>
+                </div>
             </div>
         </div>
     </div>
