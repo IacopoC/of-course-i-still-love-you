@@ -46,8 +46,9 @@
         <div class="col-md-3">
             <div class="pt-5">
                 <h4 class="pb-1">Activity data:</h4>
-            <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
-            <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
+             <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
+             <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
+             <p>Counter Total Activity: <strong>{{ $total_count_activity }}</strong></p>
             </div>
         </div>
         <div class="col-md-3">

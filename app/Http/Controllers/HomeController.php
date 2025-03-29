@@ -38,9 +38,12 @@ class HomeController extends Controller
         $count_messages = Message::where('user_id',$userId)->count();
         $count_updowns = Updown::where('user_id',$userId)->count();
 
+        $total_count_activity = $count_messages + $count_updowns;
+
         return view('dashboard', [
             'count_messages' => $count_messages,
             'count_updowns' => $count_updowns,
+            'total_count_activity' => $total_count_activity,
             'svgCode' => $svgCode
         ]);
     }
