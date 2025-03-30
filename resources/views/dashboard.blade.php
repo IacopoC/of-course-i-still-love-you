@@ -13,6 +13,9 @@
     <div class="row">
         <div class="col-md-12">
             <p class="text-uppercase fw-bold pt-md-5">Welcome {{ Auth::user()->name }} to your dashboard:</p>
+            <div class="alert alert-light" role="alert" id="location-data-string">
+                <span class="text-white location-data"></span>
+            </div>
             @if($count_messages < 1)
                     <div class="card">
                         <div class="card-body">
@@ -37,7 +40,7 @@
         </div>
         <div class="col-md-3">
             <div class="pt-5">
-                <h4 class="pb-1">User data:</h4>
+                <p class="pb-1 text-uppercase fw-bold">User data:</p>
                 <p>Username: <strong>{{ Auth::user()->name }}</strong></p>
                 <p>Email: <strong>{{ Auth::user()->email }}</strong></p>
                 <p>Profile created: <strong>{{ Auth::user()->created_at }}</strong></p>
@@ -45,7 +48,7 @@
             </div>
         <div class="col-md-3">
             <div class="pt-5">
-                <h4 class="pb-1">Activity data:</h4>
+                <p class="pb-1 text-uppercase fw-bold">Activity data:</p>
              <p>Counter Messages: <strong>{{ $count_messages }}</strong></p>
              <p>Counter Updowns: <strong>{{ $count_updowns }}</strong></p>
              <p>Counter Total Activity: <strong>{{ $total_count_activity }}</strong></p>
@@ -53,7 +56,7 @@
         </div>
         <div class="col-md-3">
             <div class="pt-5">
-            <h4>Switch mode:</h4>
+            <p class="text-uppercase fw-bold">Switch mode:</p>
             <form method="post" action="{{ route('dashboard') }}">
                 @csrf
                 <div class="form-check form-switch">
