@@ -16,8 +16,8 @@
             <h1 class="h3 mb-3 fw-normal">Please register</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required id="floatingInput" placeholder="Insert your name">
-                <label for="floatingInput">Name</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required id="floatingInputNameRegister" placeholder="Insert your name">
+                <label for="floatingInputNameRegister">Name</label>
             </div>
             @error('name')
             <span class="invalid-feedback" role="alert">
@@ -25,8 +25,8 @@
                                     </span>
             @enderror
             <div class="form-floating">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required id="floatingInputEmailRegister" placeholder="name@example.com">
+                <label for="floatingInputEmailRegister">Email address</label>
             </div>
             @error('email')
             <span class="invalid-feedback" role="alert">
@@ -34,8 +34,8 @@
                                     </span>
             @enderror
             <div class="form-floating">
-                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required id="floatingPasswordRegister" placeholder="Password">
+                <label for="floatingPasswordRegister">Password</label>
             </div>
             @error('password')
             <span class="invalid-feedback" role="alert">
@@ -43,8 +43,8 @@
                                     </span>
             @enderror
             <div class="form-floating">
-                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required id="floatingPassword" placeholder="Confirm password">
-                <label for="floatingPassword">Confirm Password</label>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required id="floatingPasswordConfirmRegister" placeholder="Confirm password">
+                <label for="floatingPasswordConfirmRegister">Confirm Password</label>
             </div>
             <div class="my-3"></div>
             <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
