@@ -9,36 +9,36 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link px-2 {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link px-2 {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('messages')) ? 'active' : '' }}" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
+                        <a class="nav-link px-2 {{ (request()->is('messages')) ? 'active' : '' }}" href="{{ route('messages.index') }}">{{ __('Create Messages') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('updowns')) ? 'active' : '' }}" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a>
+                        <a class="nav-link px-2 {{ (request()->is('updowns')) ? 'active' : '' }}" href="{{ route('updowns.index') }}">{{ __('Create Updowns') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                        <a class="nav-link px-2 {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                     </li>
                     <li class="nav-item">
-                        <p class="nav-link mb-0">
+                        <p class="nav-link mb-0 px-2">
                             {{ Auth::user()->name }}
                         </p>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-link pb-2" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
+                        <button type="button" class="btn btn-link pb-2 mx-2" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
                     </li>
                 @endguest
                     <li class="nav-item">
-                        <a href="mailto:{{ env('CONTACT_EMAIL') }}"><button type="button" class="btn btn-primary pb-2">Contact us</button></a>
+                        <a href="mailto:{{ env('CONTACT_EMAIL') }}"><button type="button" class="btn btn-primary pb-2 mx-2">Contact us</button></a>
                     </li>
             </ul>
         </div>
