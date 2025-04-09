@@ -13,6 +13,9 @@
     <div class="row">
         <div class="col-md-12">
             <p class="text-uppercase fw-bold pt-md-5">Welcome {{ Auth::user()->name }} to your dashboard:</p>
+            <div class="alert alert-dark" role="alert">
+                <strong>Warning:</strong> Messages and Updowns older than a month will be deleted
+            </div>
             <div class="alert alert-light" role="alert" id="location-data-string">
                 <span class="text-white location-data"></span>
             </div>
