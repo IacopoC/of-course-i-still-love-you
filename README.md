@@ -20,8 +20,4 @@ A small website where you can write private texts notes or updowns messages (sho
 - Contact us button for help.
 - Messages and Updowns records will be deleted after a month.
 
-### Link
-
-- [Demo](https://www.ofcourseistillloveyou.site/)
-
 
